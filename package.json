@@ -1,0 +1,24 @@
+{
+  "name": "virtual-asphalt-website",
+  "version": "1.0.0",
+  "description": "Simracing Liga Website with Eleventy",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy"
+  },
+  "keywords": [
+    "eleventy",
+    "11ty",
+    "simracing",
+    "static-site"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  },
+  "dependencies": {
+    "luxon": "^3.7.2"
+  }
+}
