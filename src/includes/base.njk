@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>{{ title or 'Virtual Asphalt Simracing' }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 2rem;
+        background: #f7f7f7;
+      }
+      nav {
+        margin-bottom: 2rem;
+      }
+      nav a {
+        margin-right: 1rem;
+        text-decoration: none;
+        color: #333;
+      }
+      nav a.active {
+        font-weight: bold;
+      }
+      .rennkalender img {
+        max-width: 400px;
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+      .rennkalender li {
+        margin-bottom: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="/" {% if title == 'Startseite' %} class="active" {% endif %}>Home</a>
+      <a href="/pages/codeofconduct/" {% if title == 'Code Of Conduct' %} class="active" {% endif %}>Code Of Conduct</a>
+      <a href="/pages/ruleset/" {% if title == 'ruleset' %} class="active" {% endif %}>Ruleset</a>
+      <a href="/pages/contact/" {% if title == 'Contact' %} class="active" {% endif %}>Contact</a>
+      <div class="dropdown" style="display:inline-block; position:relative;">
+        <button style="background:none; border:none; color:#333; font:inherit; cursor:pointer; padding:0 1rem;">More ▼</button>
+        <div
+          class="dropdown-content"
+          style="display:none; position:absolute; background:#fff; min-width:160px; box-shadow:0 8px 16px rgba(0,0,0,0.2);
+            z-index:1;">
+          <a href="/pages/extra1/" style="display:block; padding:0.5em 1em; color:#333; text-decoration:none;">Extra Link 1</a>
+          <a href="/pages/extra2/" style="display:block; padding:0.5em 1em; color:#333; text-decoration:none;">Extra Link 2</a>
+          <a href="/pages/extra3/" style="display:block; padding:0.5em 1em; color:#333; text-decoration:none;">Extra Link 3</a>
+        </div>
+      </div>
+      <script>
+        // Simple dropdown logic
+        document.addEventListener('DOMContentLoaded', function () {
+          var dropdown = document.querySelector('.dropdown');
+          var btn = dropdown.querySelector('button');
+          var content = dropdown.querySelector('.dropdown-content');
+          btn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            content.style.display = content.style.display === 'block'
+              ? 'none'
+              : 'block';
+          });
+          document.addEventListener('click', function () {
+            content.style.display = 'none';
+          });
+        });
+      </script>
+    </nav>
+    <main>
+      {{ content | safe }}
+    </main>
+    <footer style="margin-top:3rem; color:#888; font-size:0.9em;">
+      &copy; 2025 virtual-asphalt.org
+    </footer>
+  </body>
+</html>
