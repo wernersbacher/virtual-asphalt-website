@@ -144,3 +144,6 @@ _site/
 .eleventy.js-output/
 .eleventycache/
 .eleventyignore
+
+# custom folders
+wordpress/

@@ -24,6 +24,15 @@ jobs:
       - name: Build Eleventy site
         run: npm run build
 
-      # - name: Upload to file server
-      #   run: |
-      #     echo "Upload step will be added here."
+
+      - name: Deploy to FTP server
+        uses: SamKirkland/FTP-Deploy-Action@v4
+        with:
+          server: ${{ secrets.VA_FTP_URL }}
+          username: ${{ secrets.VA_FTP_USER }}
+          password: ${{ secrets.VA_FTP_PASS }}
+          local-dir: _site/
+          server-dir: /
+          protocol: ftps
+          port: 21
+          security: false
