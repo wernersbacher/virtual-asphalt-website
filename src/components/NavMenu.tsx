@@ -46,7 +46,9 @@ const NavMenuEntry: React.FC<{ item: NavMenuItem }> = ({ item }) => {
         <DropdownMenuTrigger asChild>
           <Button
             variant="ghost"
-            className={navButtonClass + ' flex items-center gap-1'}
+            className={
+              navButtonClass + ' flex items-center gap-1 cursor-pointer'
+            }
           >
             {item.label}
             <svg
@@ -82,30 +84,14 @@ const NavMenuEntry: React.FC<{ item: NavMenuItem }> = ({ item }) => {
                     href={child.to}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1"
+                    className="flex items-center gap-1 cursor-pointer"
                   >
-                    {child.label}
-                    <svg
-                      className="w-4 h-4 ml-1"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M17 7h-6a2 2 0 0 0-2 2v6"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M7 17l10-10"
-                      />
-                    </svg>
+                    {child.label} ➚
                   </a>
                 ) : (
-                  <Link to={child.to || '#'}>{child.label}</Link>
+                  <Link to={child.to || '#'} className="cursor-pointer">
+                    {child.label}
+                  </Link>
                 )}
               </DropdownMenuItem>
             ),
@@ -124,25 +110,7 @@ const NavMenuEntry: React.FC<{ item: NavMenuItem }> = ({ item }) => {
             rel="noopener noreferrer"
             className="flex items-center gap-1"
           >
-            {item.label}
-            <svg
-              className="w-4 h-4 ml-1"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M17 7h-6a2 2 0 0 0-2 2v6"
-              />
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M7 17l10-10"
-              />
-            </svg>
+            {item.label} ➚
           </a>
         </Button>
       )

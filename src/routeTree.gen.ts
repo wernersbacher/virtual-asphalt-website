@@ -17,6 +17,8 @@ import { Route as ChampionshipsRouteImport } from './routes/championships'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as HowtoRecordTelemetryRouteImport } from './routes/howto/record-telemetry'
+import { Route as HowtoCreateTeamRouteImport } from './routes/howto/create-team'
+import { Route as HowtoCreateSkinRouteImport } from './routes/howto/create-skin'
 
 const RulesRoute = RulesRouteImport.update({
   id: '/rules',
@@ -58,6 +60,16 @@ const HowtoRecordTelemetryRoute = HowtoRecordTelemetryRouteImport.update({
   path: '/howto/record-telemetry',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HowtoCreateTeamRoute = HowtoCreateTeamRouteImport.update({
+  id: '/howto/create-team',
+  path: '/howto/create-team',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HowtoCreateSkinRoute = HowtoCreateSkinRouteImport.update({
+  id: '/howto/create-skin',
+  path: '/howto/create-skin',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -67,6 +79,8 @@ export interface FileRoutesByFullPath {
   '/faq': typeof FaqRoute
   '/get-started': typeof GetStartedRoute
   '/rules': typeof RulesRoute
+  '/howto/create-skin': typeof HowtoCreateSkinRoute
+  '/howto/create-team': typeof HowtoCreateTeamRoute
   '/howto/record-telemetry': typeof HowtoRecordTelemetryRoute
 }
 export interface FileRoutesByTo {
@@ -77,6 +91,8 @@ export interface FileRoutesByTo {
   '/faq': typeof FaqRoute
   '/get-started': typeof GetStartedRoute
   '/rules': typeof RulesRoute
+  '/howto/create-skin': typeof HowtoCreateSkinRoute
+  '/howto/create-team': typeof HowtoCreateTeamRoute
   '/howto/record-telemetry': typeof HowtoRecordTelemetryRoute
 }
 export interface FileRoutesById {
@@ -88,6 +104,8 @@ export interface FileRoutesById {
   '/faq': typeof FaqRoute
   '/get-started': typeof GetStartedRoute
   '/rules': typeof RulesRoute
+  '/howto/create-skin': typeof HowtoCreateSkinRoute
+  '/howto/create-team': typeof HowtoCreateTeamRoute
   '/howto/record-telemetry': typeof HowtoRecordTelemetryRoute
 }
 export interface FileRouteTypes {
@@ -100,6 +118,8 @@ export interface FileRouteTypes {
     | '/faq'
     | '/get-started'
     | '/rules'
+    | '/howto/create-skin'
+    | '/howto/create-team'
     | '/howto/record-telemetry'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -110,6 +130,8 @@ export interface FileRouteTypes {
     | '/faq'
     | '/get-started'
     | '/rules'
+    | '/howto/create-skin'
+    | '/howto/create-team'
     | '/howto/record-telemetry'
   id:
     | '__root__'
@@ -120,6 +142,8 @@ export interface FileRouteTypes {
     | '/faq'
     | '/get-started'
     | '/rules'
+    | '/howto/create-skin'
+    | '/howto/create-team'
     | '/howto/record-telemetry'
   fileRoutesById: FileRoutesById
 }
@@ -131,6 +155,8 @@ export interface RootRouteChildren {
   FaqRoute: typeof FaqRoute
   GetStartedRoute: typeof GetStartedRoute
   RulesRoute: typeof RulesRoute
+  HowtoCreateSkinRoute: typeof HowtoCreateSkinRoute
+  HowtoCreateTeamRoute: typeof HowtoCreateTeamRoute
   HowtoRecordTelemetryRoute: typeof HowtoRecordTelemetryRoute
 }
 
@@ -192,6 +218,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HowtoRecordTelemetryRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/howto/create-team': {
+      id: '/howto/create-team'
+      path: '/howto/create-team'
+      fullPath: '/howto/create-team'
+      preLoaderRoute: typeof HowtoCreateTeamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/howto/create-skin': {
+      id: '/howto/create-skin'
+      path: '/howto/create-skin'
+      fullPath: '/howto/create-skin'
+      preLoaderRoute: typeof HowtoCreateSkinRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -203,6 +243,8 @@ const rootRouteChildren: RootRouteChildren = {
   FaqRoute: FaqRoute,
   GetStartedRoute: GetStartedRoute,
   RulesRoute: RulesRoute,
+  HowtoCreateSkinRoute: HowtoCreateSkinRoute,
+  HowtoCreateTeamRoute: HowtoCreateTeamRoute,
   HowtoRecordTelemetryRoute: HowtoRecordTelemetryRoute,
 }
 export const routeTree = rootRouteImport
