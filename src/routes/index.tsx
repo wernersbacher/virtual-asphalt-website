@@ -1,9 +1,10 @@
-import { createFileRoute } from '@tanstack/react-router'
-import { InfoBlock } from '../components/InfoBlock'
+import { createFileRoute } from '@tanstack/react-router';
+
+import { InfoBlock } from '../components/InfoBlock';
 
 export const Route = createFileRoute('/')({
   component: HomePage,
-})
+});
 
 function HomePage() {
   return (
@@ -73,5 +74,5 @@ function HomePage() {
         </p>
       </InfoBlock>
     </>
-  )
+  );
 }

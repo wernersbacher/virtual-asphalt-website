@@ -1,9 +1,10 @@
-import { createFileRoute } from '@tanstack/react-router'
-import { VimeoConsent } from '../../components/VimeoConsent'
+import { createFileRoute } from '@tanstack/react-router';
+
+import { VimeoConsent } from '../../components/VimeoConsent';
 
 export const Route = createFileRoute('/howto/create-team')({
   component: HowToCreateSkin,
-})
+});
 
 function HowToCreateSkin() {
   return (
@@ -19,10 +20,10 @@ function HowToCreateSkin() {
         />
         <p className="mt-4 text-base text-gray-700 dark:text-gray-200 text-center">
           Watch this video for a step-by-step guide on how to create your custom
-          team in ACSwui. It's only in German, but you'll probably understand
-          the UI flow!
+          team in ACSwui. It&apos;s only in German, but you&apos;ll probably
+          understand the UI flow!
         </p>
       </div>
     </>
-  )
+  );
 }

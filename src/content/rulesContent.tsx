@@ -1,6 +1,6 @@
 // src/content/rulesContent.tsx
 // This file exports the rules content as a structured array for dynamic ToC and content rendering.
-import React from 'react'
+import React from 'react';
 
 export interface RuleSection {
   id: string
@@ -577,4 +577,4 @@ export const rulesContent: Array<RuleSection> = [
       },
     ],
   },
-]
+];

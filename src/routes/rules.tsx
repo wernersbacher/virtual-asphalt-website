@@ -1,11 +1,12 @@
-import { createFileRoute } from '@tanstack/react-router'
-import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
-import { rulesContent } from '../content/rulesContent'
-import type { RuleSection } from '../content/rulesContent'
+import { createFileRoute } from '@tanstack/react-router';
+
+import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
+import { rulesContent } from '../content/rulesContent';
+import type { RuleSection } from '../content/rulesContent';
 
 export const Route = createFileRoute('/rules')({
   component: RulesPage,
-})
+});
 
 function TocList({
   sections,
@@ -18,11 +19,11 @@ function TocList({
   const baseUl =
     level === 0
       ? 'mb-6 rounded-lg border border-border bg-card p-4 shadow-sm'
-      : 'ml-4 pl-3 border-l-2 border-border'
+      : 'ml-4 pl-3 border-l-2 border-border';
   const liClass =
     level === 0
       ? 'mb-1'
-      : 'mb-1 relative before:content-["•"] before:absolute before:-left-3 before:text-muted-foreground'
+      : 'mb-1 relative before:content-["•"] before:absolute before:-left-3 before:text-muted-foreground';
   return (
     <ul className={baseUl + ' space-y-1'}>
       {sections.map((section) => (
@@ -39,7 +40,7 @@ function TocList({
         </li>
       ))}
     </ul>
-  )
+  );
 }
 
 function SectionCard({ section }: { section: RuleSection }) {
@@ -63,7 +64,7 @@ function SectionCard({ section }: { section: RuleSection }) {
           ))}
       </CardContent>
     </Card>
-  )
+  );
 }
 
 function RulesPage() {
@@ -82,5 +83,5 @@ function RulesPage() {
         <SectionCard key={section.id} section={section} />
       ))}
     </div>
-  )
+  );
 }

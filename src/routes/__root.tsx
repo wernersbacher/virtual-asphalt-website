@@ -1,10 +1,10 @@
-import { Outlet, createRootRoute } from '@tanstack/react-router'
-import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
-import { TanstackDevtools } from '@tanstack/react-devtools'
+import { TanstackDevtools } from '@tanstack/react-devtools';
+import { Outlet, createRootRoute } from '@tanstack/react-router';
+import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools';
 
-import Header from '../components/Header'
-import { Card, CardContent } from '../components/ui/card'
-import Footer from '../components/Footer'
+import Footer from '../components/Footer';
+import Header from '../components/Header';
+import { Card, CardContent } from '../components/ui/card';
 
 export const Route = createRootRoute({
   component: () => (
@@ -35,4 +35,4 @@ export const Route = createRootRoute({
       </div>
     </div>
   ),
-})
+});

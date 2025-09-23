@@ -1,8 +1,8 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/about')({
   component: AboutPage,
-})
+});
 
 function AboutPage() {
   return (
@@ -14,7 +14,7 @@ function AboutPage() {
         exciting events, a friendly community, and a passion for motorsport!
       </p>
     </div>
-  )
+  );
 }
 
 export default function About() {
@@ -23,5 +23,5 @@ export default function About() {
       <h1 className="text-2xl font-bold mb-4">About</h1>
       <p>About Virtual Asphalt.</p>
     </div>
-  )
+  );
 }

@@ -1,8 +1,8 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/contact')({
   component: ContactPage,
-})
+});
 
 function ContactPage() {
   return (
@@ -19,7 +19,7 @@ function ContactPage() {
         or join our Discord community!
       </p>
     </div>
-  )
+  );
 }
 
 export default function Contact() {
@@ -28,5 +28,5 @@ export default function Contact() {
       <h1 className="text-2xl font-bold mb-4">Contact</h1>
       <p>Contact us for more information.</p>
     </div>
-  )
+  );
 }
