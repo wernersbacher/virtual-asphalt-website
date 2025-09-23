@@ -12,8 +12,25 @@ export default function GetStarted() {
         Get Started
       </h1>
       <p className="text-lg leading-relaxed">
-        To join the ride, you need the Content Manager, CSP and Real Penalty.
-        Then you can practice on our servers. To practice, no registration is
+        To join the ride, you need the{' '}
+        <a
+          href="https://assettocorsa.club/content-manager.html"
+          className="text-blue-700 underline font-medium hover:text-blue-900"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Content Manager
+        </a>
+        , CSP and{' '}
+        <a
+          href="https://www.patreon.com/posts/92150073?collection=157721"
+          className="text-blue-700 underline font-medium hover:text-blue-900"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Real Penalty
+        </a>
+        . Then you can practice on our servers. To practice, no registration is
         needed. For the championship races, a registration is needed or highly
         recommended. You can find all upcoming races in{' '}
         <a

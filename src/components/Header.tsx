@@ -14,7 +14,11 @@ const menuItems: Array<NavMenuItem> = [
   { to: '/faq', label: 'FAQ' },
   {
     label: 'Howto',
-    children: [{ to: '/howto/record-telemetry', label: 'Record Telemetry' }],
+    children: [
+      { to: '/howto/record-telemetry', label: 'Record Telemetry' },
+      { to: '/howto/create-skin', label: 'Create Skin' },
+      { to: '/howto/create-team', label: 'Create Team' },
+    ],
   },
   {
     to: 'https://acswui.virtual-asphalt.org/',
@@ -46,26 +50,7 @@ export default function Header() {
             <div className="flex md:hidden w-full items-center justify-between mb-2">
               {/* Dummy vA Logo (SVG) */}
               <span className="flex items-center h-10">
-                <svg
-                  width="40"
-                  height="40"
-                  viewBox="0 0 40 40"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect width="40" height="40" rx="8" fill="#0ea5e9" />
-                  <text
-                    x="50%"
-                    y="55%"
-                    textAnchor="middle"
-                    fill="#fff"
-                    fontSize="18"
-                    fontWeight="bold"
-                    dominantBaseline="middle"
-                  >
-                    vA
-                  </text>
-                </svg>
+                <img src="/logo512.png" className="h-full" />
               </span>
               <Button
                 variant="ghost"
