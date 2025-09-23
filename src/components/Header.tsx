@@ -1,10 +1,12 @@
-import React from 'react'
-import { Menu } from 'lucide-react'
-import { Link } from '@tanstack/react-router'
-import headerImg from '../img/header/header.png'
-import { NavMenu } from './NavMenu'
-import { Button } from './ui/button'
-import type { NavMenuItem } from './NavMenu'
+import { Link } from '@tanstack/react-router';
+import { Menu } from 'lucide-react';
+import React from 'react';
+
+import headerImg from '../img/header/header.png';
+
+import { NavMenu } from './NavMenu';
+import type { NavMenuItem } from './NavMenu';
+import { Button } from './ui/button';
 
 const menuItems: Array<NavMenuItem> = [
   { to: '/', label: 'Home' },
@@ -25,10 +27,10 @@ const menuItems: Array<NavMenuItem> = [
     label: 'ACSwui',
     external: true,
   },
-]
+];
 
 export default function Header() {
-  const [mobileOpen, setMobileOpen] = React.useState(false)
+  const [mobileOpen, setMobileOpen] = React.useState(false);
   return (
     <div className="w-full flex justify-center bg-transparent mt-3">
       <div className="w-full">
@@ -112,5 +114,5 @@ export default function Header() {
         </div>
       </div>
     </div>
-  )
+  );
 }

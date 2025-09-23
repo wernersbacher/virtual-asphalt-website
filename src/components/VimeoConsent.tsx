@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 interface VimeoConsentProps {
   src: string
@@ -6,7 +6,7 @@ interface VimeoConsentProps {
 }
 
 export const VimeoConsent: React.FC<VimeoConsentProps> = ({ src, title }) => {
-  const [consent, setConsent] = React.useState(false)
+  const [consent, setConsent] = React.useState(false);
   return (
     <div className="w-full max-w-2xl aspect-video rounded-lg overflow-hidden shadow-lg border border-border flex items-center justify-center bg-muted">
       {consent ? (
@@ -26,5 +26,5 @@ export const VimeoConsent: React.FC<VimeoConsentProps> = ({ src, title }) => {
         </button>
       )}
     </div>
-  )
-}
+  );
+};

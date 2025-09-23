@@ -1,9 +1,10 @@
-import { createFileRoute } from '@tanstack/react-router'
-import RaceCalendarGallery from '../components/RaceCalenderGallery'
+import { createFileRoute } from '@tanstack/react-router';
+
+import RaceCalendarGallery from '../components/RaceCalenderGallery';
 
 export const Route = createFileRoute('/championships')({
   component: Championships,
-})
+});
 
 export default function Championships() {
   return (
@@ -17,5 +18,5 @@ export default function Championships() {
       </p>
       <RaceCalendarGallery />
     </>
-  )
+  );
 }

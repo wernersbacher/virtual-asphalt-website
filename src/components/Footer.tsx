@@ -1,8 +1,8 @@
-import { ModeToggle } from './ui/mode-toggle'
+import { ModeToggle } from './ui/mode-toggle';
 
 // Replace with your Discord invite/banner image and link
-const DISCORD_INVITE_URL = 'https://discord.gg/your-invite-link'
-const DISCORD_BANNER = '/logo192.png' // Placeholder, replace with actual banner if available
+const DISCORD_INVITE_URL = 'https://discord.gg/your-invite-link';
+const DISCORD_BANNER = '/logo192.png'; // Placeholder, replace with actual banner if available
 
 export default function Footer() {
   return (
@@ -28,5 +28,5 @@ export default function Footer() {
         <ModeToggle />
       </div>
     </footer>
-  )
+  );
 }

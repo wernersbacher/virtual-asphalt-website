@@ -1,10 +1,11 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router';
+
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '../components/ui/accordion'
+} from '../components/ui/accordion';
 
 export default function FAQ() {
   return (
@@ -75,9 +76,9 @@ export default function FAQ() {
         </Accordion>
       </div>
     </>
-  )
+  );
 }
 
 export const Route = createFileRoute('/faq')({
   component: FAQ,
-})
+});

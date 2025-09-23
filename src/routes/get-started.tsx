@@ -1,9 +1,10 @@
-import { createFileRoute } from '@tanstack/react-router'
-import { InfoBlock } from '../components/InfoBlock'
+import { createFileRoute } from '@tanstack/react-router';
+
+import { InfoBlock } from '../components/InfoBlock';
 
 export const Route = createFileRoute('/get-started')({
   component: GetStarted,
-})
+});
 
 export default function GetStarted() {
   return (
@@ -152,5 +153,5 @@ export default function GetStarted() {
         <p>Coming soon!</p>
       </InfoBlock>
     </>
-  )
+  );
 }

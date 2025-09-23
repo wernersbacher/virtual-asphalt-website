@@ -1,5 +1,6 @@
-import { createFileRoute } from '@tanstack/react-router'
-import { InfoBlock } from '../../components/InfoBlock'
+import { createFileRoute } from '@tanstack/react-router';
+
+import { InfoBlock } from '../../components/InfoBlock';
 
 export default function HowToRecordTelemetry() {
   return (
@@ -93,9 +94,9 @@ export default function HowToRecordTelemetry() {
         </InfoBlock>
       </div>
     </>
-  )
+  );
 }
 
 export const Route = createFileRoute('/howto/record-telemetry')({
   component: HowToRecordTelemetry,
-})
+});

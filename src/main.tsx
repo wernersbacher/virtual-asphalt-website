@@ -1,12 +1,11 @@
-import { StrictMode } from 'react'
-import ReactDOM from 'react-dom/client'
-import { RouterProvider, createRouter } from '@tanstack/react-router'
+import { RouterProvider, createRouter } from '@tanstack/react-router';
+import { StrictMode } from 'react';
+import ReactDOM from 'react-dom/client';
 
+import { ThemeProvider } from './components/themeprovider';
 // Import the generated route tree
-import { routeTree } from './routeTree.gen'
-
-import './styles.css'
-import { ThemeProvider } from './components/themeprovider'
+import { routeTree } from './routeTree.gen';
+import './styles.css';
 
 // Create a new router instance
 const router = createRouter({
@@ -16,7 +15,7 @@ const router = createRouter({
   scrollRestoration: true,
   defaultStructuralSharing: true,
   defaultPreloadStaleTime: 0,
-})
+});
 
 // Register the router instance for type safety
 declare module '@tanstack/react-router' {
@@ -26,14 +25,14 @@ declare module '@tanstack/react-router' {
 }
 
 // Render the app
-const rootElement = document.getElementById('app')
+const rootElement = document.getElementById('app');
 if (rootElement && !rootElement.innerHTML) {
-  const root = ReactDOM.createRoot(rootElement)
+  const root = ReactDOM.createRoot(rootElement);
   root.render(
     <StrictMode>
       <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
         <RouterProvider router={router} />
       </ThemeProvider>
     </StrictMode>,
-  )
+  );
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 interface InfoBlockProps {
   color?: 'blue' | 'yellow' | 'gray'
@@ -26,7 +26,7 @@ const colorMap = {
     title: 'text-gray-900 dark:text-white',
     text: 'text-gray-700 dark:text-gray-200',
   },
-}
+};
 
 export function InfoBlock({
   color = 'blue',
@@ -34,7 +34,7 @@ export function InfoBlock({
   children,
   className = '',
 }: InfoBlockProps) {
-  const c = colorMap[color]
+  const c = colorMap[color];
   return (
     <div
       className={`rounded-md shadow-sm p-4 mt-2 ${c.bg} ${c.border} ${className}`.trim()}
@@ -44,5 +44,5 @@ export function InfoBlock({
       )}
       <div className={c.text}>{children}</div>
     </div>
-  )
+  );
 }

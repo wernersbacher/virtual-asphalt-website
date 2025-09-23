@@ -1,12 +1,13 @@
-import React from 'react'
-import { Link } from '@tanstack/react-router'
-import { Button } from './ui/button'
+import { Link } from '@tanstack/react-router';
+import React from 'react';
+
+import { Button } from './ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from './ui/dropdown-menu'
+} from './ui/dropdown-menu';
 
 export type NavMenuItem = {
   label: string
@@ -26,18 +27,18 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
         <NavMenuEntry key={item.label + idx} item={item} />
       ))}
     </nav>
-  )
-}
+  );
+};
 
 const navButtonClass =
   'text-lg font-semibold px-4 py-2 rounded-xl transition-all duration-200 shadow-sm active:scale-95 bg-transparent dark:bg-transparent ' +
   'hover:bg-primary/80 hover:text-primary-foreground focus:bg-primary/90 focus:text-primary-foreground ' +
-  'dark:hover:bg-primary dark:hover:text-primary-foreground dark:focus:bg-primary dark:focus:text-primary-foreground'
+  'dark:hover:bg-primary dark:hover:text-primary-foreground dark:focus:bg-primary dark:focus:text-primary-foreground';
 
 const dropdownItemClass =
   'w-full text-left text-base rounded-lg px-4 py-2 transition-colors bg-transparent dark:bg-transparent ' +
   'hover:bg-primary/80 hover:text-primary-foreground focus:bg-primary/90 focus:text-primary-foreground ' +
-  'dark:hover:bg-primary dark:hover:text-primary-foreground dark:focus:bg-primary dark:focus:text-primary-foreground'
+  'dark:hover:bg-primary dark:hover:text-primary-foreground dark:focus:bg-primary dark:focus:text-primary-foreground';
 
 const NavMenuEntry: React.FC<{ item: NavMenuItem }> = ({ item }) => {
   if (item.children && item.children.length > 0) {
@@ -98,7 +99,7 @@ const NavMenuEntry: React.FC<{ item: NavMenuItem }> = ({ item }) => {
           )}
         </DropdownMenuContent>
       </DropdownMenu>
-    )
+    );
   }
   if (item.to) {
     if (item.external) {
@@ -113,18 +114,18 @@ const NavMenuEntry: React.FC<{ item: NavMenuItem }> = ({ item }) => {
             {item.label} ➚
           </a>
         </Button>
-      )
+      );
     } else {
       return (
         <Button asChild variant="ghost" className={navButtonClass}>
           <Link to={item.to}>{item.label}</Link>
         </Button>
-      )
+      );
     }
   }
   return (
     <Button variant="ghost" className={navButtonClass} disabled>
       {item.label}
     </Button>
-  )
-}
+  );
+};
