@@ -1,8 +1,9 @@
-import { createFileRoute } from '@tanstack/react-router';
+import { createFileRoute, Link } from "@tanstack/react-router";
 
-import { InfoBlock } from '../components/InfoBlock';
+import { InfoBlock } from "../components/InfoBlock";
+import { InlineExternalLink } from "../components/Link";
 
-export const Route = createFileRoute('/')({
+export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
@@ -10,7 +11,7 @@ function HomePage() {
   return (
     <>
       <h1 className="text-4xl font-extrabold mb-2 tracking-tight text-center drop-shadow-lg">
-        Welcome to{' '}
+        Welcome to{" "}
         <span className="text-blue-700 dark:text-blue-400">
           Virtual Asphalt
         </span>
@@ -21,11 +22,34 @@ function HomePage() {
         every new driver, whether you are a complete beginner or a long-time sim
         enthusiast.
       </p>
+
+      {/* Quick Links Section */}
+      <div className="flex flex-col sm:flex-row justify-center gap-4 my-3">
+        <Link
+          to="/get-started"
+          className="px-4 py-2 bg-blue-600 text-white rounded shadow hover:bg-blue-700 transition"
+        >
+          Get Started
+        </Link>
+        <Link
+          to="/championships"
+          className="px-4 py-2 bg-green-600 text-white rounded shadow hover:bg-green-700 transition"
+        >
+          Current Championships
+        </Link>
+        <Link
+          to="/racingGallery"
+          className="px-4 py-2 bg-purple-600 text-white rounded shadow hover:bg-purple-700 transition"
+        >
+          Image Gallery
+        </Link>
+      </div>
+
       <InfoBlock color="blue">
         <p className="text-base">
           <span className="font-semibold">
             We race in Assetto Corsa every Monday!
-          </span>{' '}
+          </span>{" "}
           In addition to 3-4 championships a year, these are very different and
           sometimes unusual track/car combinations. You can find our current
           championships on the right side. The intermediate races are announced
@@ -37,39 +61,24 @@ function HomePage() {
         <p className="text-base text-gray-800 dark:text-gray-200 font-medium">
           Join our Discord server! This is the fastest way to get connected.
         </p>
-        <a
-          href="https://discord.gg/BaZxrzvmGu"
-          className="inline-block rounded-lg shadow-lg transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <InlineExternalLink href="https://discord.gg/BaZxrzvmGu">
           <img
             src="https://discordapp.com/api/guilds/783402138055344169/widget.png?style=banner2"
             alt="Discord Banner"
             className="rounded-md border border-blue-300 w-full max-w-xs"
           />
-        </a>
-        <a
-          href="https://discord.gg/BaZxrzvmGu"
-          className="mt-2 px-6 py-2 bg-blue-700 text-white font-semibold rounded-full shadow hover:bg-blue-800 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        </InlineExternalLink>
+        <InlineExternalLink href="https://discord.gg/BaZxrzvmGu">
           Join Discord
-        </a>
+        </InlineExternalLink>
       </div>
       <InfoBlock color="gray" className="text-center">
         <p>
           We have <span className="font-bold">3 servers online</span>. Find out
-          which one you need to join in{' '}
-          <a
-            href="https://acswui.virtual-asphalt.org/"
-            className="text-blue-700 dark:text-blue-400 underline font-medium hover:text-blue-900 dark:hover:text-blue-300"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          which one you need to join in{" "}
+          <InlineExternalLink href="https://acswui.virtual-asphalt.org/">
             ACSwui
-          </a>
+          </InlineExternalLink>
           .
         </p>
       </InfoBlock>

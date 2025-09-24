@@ -1,23 +1,24 @@
-import { Link } from '@tanstack/react-router';
-import React from 'react';
+import { Link } from "@tanstack/react-router";
+import React from "react";
 
-import { Button } from './ui/button';
+import { InlineExternalLink as ExternalLink } from "./Link";
+import { Button } from "./ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from './ui/dropdown-menu';
+} from "./ui/dropdown-menu";
 
 export type NavMenuItem = {
-  label: string
-  to?: string
-  external?: boolean
-  children?: Array<NavMenuItem>
-}
+  label: string;
+  to?: string;
+  external?: boolean;
+  children?: Array<NavMenuItem>;
+};
 
 interface NavMenuProps {
-  items: Array<NavMenuItem>
+  items: Array<NavMenuItem>;
 }
 
 export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
@@ -31,14 +32,14 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
 };
 
 const navButtonClass =
-  'text-lg font-semibold px-4 py-2 rounded-xl transition-all duration-200 shadow-sm active:scale-95 bg-transparent dark:bg-transparent ' +
-  'hover:bg-primary/80 hover:text-primary-foreground focus:bg-primary/90 focus:text-primary-foreground ' +
-  'dark:hover:bg-primary dark:hover:text-primary-foreground dark:focus:bg-primary dark:focus:text-primary-foreground';
+  "text-lg font-semibold px-4 py-2 rounded-xl transition-all duration-200 shadow-sm active:scale-95 bg-transparent dark:bg-transparent " +
+  "hover:bg-primary/80 hover:text-primary-foreground focus:bg-primary/90 focus:text-primary-foreground " +
+  "dark:hover:bg-primary dark:hover:text-primary-foreground dark:focus:bg-primary dark:focus:text-primary-foreground";
 
 const dropdownItemClass =
-  'w-full text-left text-base rounded-lg px-4 py-2 transition-colors bg-transparent dark:bg-transparent ' +
-  'hover:bg-primary/80 hover:text-primary-foreground focus:bg-primary/90 focus:text-primary-foreground ' +
-  'dark:hover:bg-primary dark:hover:text-primary-foreground dark:focus:bg-primary dark:focus:text-primary-foreground';
+  "w-full text-left text-base rounded-lg px-4 py-2 transition-colors bg-transparent dark:bg-transparent " +
+  "hover:bg-primary/80 hover:text-primary-foreground focus:bg-primary/90 focus:text-primary-foreground " +
+  "dark:hover:bg-primary dark:hover:text-primary-foreground dark:focus:bg-primary dark:focus:text-primary-foreground";
 
 const NavMenuEntry: React.FC<{ item: NavMenuItem }> = ({ item }) => {
   if (item.children && item.children.length > 0) {
@@ -48,7 +49,7 @@ const NavMenuEntry: React.FC<{ item: NavMenuItem }> = ({ item }) => {
           <Button
             variant="ghost"
             className={
-              navButtonClass + ' flex items-center gap-1 cursor-pointer'
+              navButtonClass + " flex items-center gap-1 cursor-pointer"
             }
           >
             {item.label}
@@ -81,21 +82,21 @@ const NavMenuEntry: React.FC<{ item: NavMenuItem }> = ({ item }) => {
                 className={dropdownItemClass}
               >
                 {child.external ? (
-                  <a
+                  <ExternalLink
                     href={child.to}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-1 cursor-pointer"
                   >
                     {child.label} ➚
-                  </a>
+                  </ExternalLink>
                 ) : (
-                  <Link to={child.to || '#'} className="cursor-pointer">
+                  <Link to={child.to || "#"} className="cursor-pointer">
                     {child.label}
                   </Link>
                 )}
               </DropdownMenuItem>
-            ),
+            )
           )}
         </DropdownMenuContent>
       </DropdownMenu>
@@ -105,14 +106,7 @@ const NavMenuEntry: React.FC<{ item: NavMenuItem }> = ({ item }) => {
     if (item.external) {
       return (
         <Button asChild variant="ghost" className={navButtonClass}>
-          <a
-            href={item.to}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1"
-          >
-            {item.label} ➚
-          </a>
+          <ExternalLink href={item.to}>{item.label} ➚</ExternalLink>
         </Button>
       );
     } else {

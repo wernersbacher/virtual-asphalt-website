@@ -1,10 +1,16 @@
-import { createFileRoute } from '@tanstack/react-router';
+import { createFileRoute } from "@tanstack/react-router";
 
-import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
-import { rulesContent } from '../content/rulesContent';
-import type { RuleSection } from '../content/rulesContent';
+import { InlineExternalLink } from "../components/Link";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "../components/ui/card";
+import { rulesContent } from "../content/rulesContent";
+import type { RuleSection } from "../content/rulesContent";
 
-export const Route = createFileRoute('/rules')({
+export const Route = createFileRoute("/rules")({
   component: RulesPage,
 });
 
@@ -12,28 +18,28 @@ function TocList({
   sections,
   level = 0,
 }: {
-  sections: Array<RuleSection>
-  level?: number
+  sections: Array<RuleSection>;
+  level?: number;
 }) {
   // Styling for different levels
   const baseUl =
     level === 0
-      ? 'mb-6 rounded-lg border border-border bg-card p-4 shadow-sm'
-      : 'ml-4 pl-3 border-l-2 border-border';
+      ? "mb-6 rounded-lg border border-border bg-card p-4 shadow-sm"
+      : "ml-4 pl-3 border-l-2 border-border";
   const liClass =
     level === 0
-      ? 'mb-1'
+      ? "mb-1"
       : 'mb-1 relative before:content-["•"] before:absolute before:-left-3 before:text-muted-foreground';
   return (
-    <ul className={baseUl + ' space-y-1'}>
+    <ul className={baseUl + " space-y-1"}>
       {sections.map((section) => (
         <li key={section.id} className={liClass}>
-          <a
+          <InlineExternalLink
             href={`#${section.id}`}
             className="text-primary font-medium hover:underline focus:underline focus:outline-none transition-colors duration-100 px-1 py-0.5 rounded focus:bg-accent hover:bg-accent"
           >
             {section.title}
-          </a>
+          </InlineExternalLink>
           {section.subsections && (
             <TocList sections={section.subsections} level={level + 1} />
           )}

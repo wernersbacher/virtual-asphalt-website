@@ -1,8 +1,9 @@
-import { createFileRoute } from '@tanstack/react-router';
+import { createFileRoute } from "@tanstack/react-router";
 
-import { InfoBlock } from '../components/InfoBlock';
+import { InfoBlock } from "../components/InfoBlock";
+import { InlineExternalLink } from "../components/Link";
 
-export const Route = createFileRoute('/get-started')({
+export const Route = createFileRoute("/get-started")({
   component: GetStarted,
 });
 
@@ -13,59 +14,34 @@ export default function GetStarted() {
         Get Started
       </h1>
       <p className="text-lg leading-relaxed">
-        To join the ride, you need the{' '}
-        <a
-          href="https://assettocorsa.club/content-manager.html"
-          className="text-blue-700 underline font-medium hover:text-blue-900"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        To join the ride, you need the{" "}
+        <InlineExternalLink href="https://assettocorsa.club/content-manager.html">
           Content Manager
-        </a>
-        , CSP and{' '}
-        <a
-          href="https://www.patreon.com/posts/92150073?collection=157721"
-          className="text-blue-700 underline font-medium hover:text-blue-900"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        </InlineExternalLink>
+        , CSP and{" "}
+        <InlineExternalLink href="https://www.patreon.com/posts/92150073?collection=157721">
           Real Penalty
-        </a>
+        </InlineExternalLink>
         . Then you can practice on our servers. To practice, no registration is
         needed. For the championship races, a registration is needed or highly
-        recommended. You can find all upcoming races in{' '}
-        <a
-          href="https://acswui.virtual-asphalt.org/"
-          className="text-blue-700 underline font-medium hover:text-blue-900"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        recommended. You can find all upcoming races in{" "}
+        <InlineExternalLink href="https://acswui.virtual-asphalt.org/">
           ACSwui
-        </a>
+        </InlineExternalLink>
         . Participation is completely free of charge. You can find our community
         on Discord:
       </p>
       <div className="flex flex-col items-center gap-2">
-        <a
-          href="https://discord.gg/BaZxrzvmGu"
-          className="inline-block rounded-lg shadow-lg transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <InlineExternalLink href="https://discord.gg/BaZxrzvmGu">
           <img
             src="https://discordapp.com/api/guilds/783402138055344169/widget.png?style=banner2"
             alt="Discord Banner"
             className="rounded-md border border-blue-300 w-full max-w-xs"
           />
-        </a>
-        <a
-          href="https://discord.gg/BaZxrzvmGu"
-          className="mt-2 px-6 py-2 bg-blue-700 text-white font-semibold rounded-full shadow hover:bg-blue-800 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        </InlineExternalLink>
+        <InlineExternalLink href="https://discord.gg/BaZxrzvmGu">
           Join Discord
-        </a>
+        </InlineExternalLink>
       </div>
 
       <InfoBlock color="blue" title="Needed Apps & Training">
@@ -88,15 +64,10 @@ export default function GetStarted() {
           <li>
             Depending on the race series, additional mods may be required. These
             can be installed via Content Manager or manually if necessary. All
-            required mods can also be found in{' '}
-            <a
-              href="https://acswui.virtual-asphalt.org/"
-              className="text-blue-700 dark:text-blue-400 underline font-medium hover:text-blue-900 dark:hover:text-blue-300"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            required mods can also be found in{" "}
+            <InlineExternalLink href="https://acswui.virtual-asphalt.org/">
               ACSwui
-            </a>
+            </InlineExternalLink>
             .
           </li>
         </ol>
@@ -105,39 +76,24 @@ export default function GetStarted() {
       <InfoBlock color="gray" title="Participation in Championships">
         <ol className="list-decimal list-inside space-y-1 pl-2">
           <li>
-            Join our Discord for help and answers:{' '}
-            <a
-              href="https://discord.gg/BaZxrzvmGu"
-              className="text-blue-700 dark:text-blue-400 underline font-medium hover:text-blue-900 dark:hover:text-blue-300"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            Join our Discord for help and answers:{" "}
+            <InlineExternalLink href="https://discord.gg/BaZxrzvmGu">
               https://discord.gg/BaZxrzvmGu
-            </a>
+            </InlineExternalLink>
           </li>
           <li>
             Join the race times on the right server and race with us – you can
-            find the server links in{' '}
-            <a
-              href="https://acswui.virtual-asphalt.org/"
-              className="text-blue-700 dark:text-blue-400 underline font-medium hover:text-blue-900 dark:hover:text-blue-300"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            find the server links in{" "}
+            <InlineExternalLink href="https://acswui.virtual-asphalt.org/">
               ACSwui
-            </a>
+            </InlineExternalLink>
             .
           </li>
           <li>
-            If you want your own skin and to manage your team, log into the{' '}
-            <a
-              href="https://acswui.virtual-asphalt.org/"
-              className="text-blue-700 dark:text-blue-400 underline font-medium hover:text-blue-900 dark:hover:text-blue-300"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            If you want your own skin and to manage your team, log into the{" "}
+            <InlineExternalLink href="https://acswui.virtual-asphalt.org/">
               ACSwui
-            </a>{' '}
+            </InlineExternalLink>{" "}
             race management system with your Steam account. The process is not
             so easy, so please join our Discord 🙂
             <br />
@@ -147,10 +103,6 @@ export default function GetStarted() {
             </span>
           </li>
         </ol>
-      </InfoBlock>
-
-      <InfoBlock color="yellow" title="Upload Custom Skins">
-        <p>Coming soon!</p>
       </InfoBlock>
     </>
   );
