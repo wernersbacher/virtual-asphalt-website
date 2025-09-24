@@ -12,9 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as RulesRouteImport } from './routes/rules'
 import { Route as GetStartedRouteImport } from './routes/get-started'
 import { Route as FaqRouteImport } from './routes/faq'
-import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ChampionshipsRouteImport } from './routes/championships'
-import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as HowtoRecordTelemetryRouteImport } from './routes/howto/record-telemetry'
 import { Route as HowtoCreateTeamRouteImport } from './routes/howto/create-team'
@@ -35,19 +33,9 @@ const FaqRoute = FaqRouteImport.update({
   path: '/faq',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ChampionshipsRoute = ChampionshipsRouteImport.update({
   id: '/championships',
   path: '/championships',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -73,9 +61,7 @@ const HowtoCreateSkinRoute = HowtoCreateSkinRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
   '/championships': typeof ChampionshipsRoute
-  '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
   '/get-started': typeof GetStartedRoute
   '/rules': typeof RulesRoute
@@ -85,9 +71,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
   '/championships': typeof ChampionshipsRoute
-  '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
   '/get-started': typeof GetStartedRoute
   '/rules': typeof RulesRoute
@@ -98,9 +82,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
   '/championships': typeof ChampionshipsRoute
-  '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
   '/get-started': typeof GetStartedRoute
   '/rules': typeof RulesRoute
@@ -112,9 +94,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/about'
     | '/championships'
-    | '/contact'
     | '/faq'
     | '/get-started'
     | '/rules'
@@ -124,9 +104,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/about'
     | '/championships'
-    | '/contact'
     | '/faq'
     | '/get-started'
     | '/rules'
@@ -136,9 +114,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
-    | '/about'
     | '/championships'
-    | '/contact'
     | '/faq'
     | '/get-started'
     | '/rules'
@@ -149,9 +125,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AboutRoute: typeof AboutRoute
   ChampionshipsRoute: typeof ChampionshipsRoute
-  ContactRoute: typeof ContactRoute
   FaqRoute: typeof FaqRoute
   GetStartedRoute: typeof GetStartedRoute
   RulesRoute: typeof RulesRoute
@@ -183,25 +157,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FaqRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/championships': {
       id: '/championships'
       path: '/championships'
       fullPath: '/championships'
       preLoaderRoute: typeof ChampionshipsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -237,9 +197,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AboutRoute: AboutRoute,
   ChampionshipsRoute: ChampionshipsRoute,
-  ContactRoute: ContactRoute,
   FaqRoute: FaqRoute,
   GetStartedRoute: GetStartedRoute,
   RulesRoute: RulesRoute,
