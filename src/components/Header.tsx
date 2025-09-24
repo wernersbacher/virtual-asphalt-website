@@ -76,7 +76,8 @@ export default function Header() {
                   onClick={() => setMobileOpen(false)}
                 />
                 {/* Slide-Over Panel */}
-                <div className="ml-auto h-full w-72 bg-gradient-to-br from-primary to-blue-900 shadow-2xl flex flex-col p-8 animate-slide-in-right relative rounded-l-3xl border-l-2 border-primary/40">
+                <div className="ml-auto h-full max-h-screen w-72 shadow-2xl flex flex-col p-8 animate-slide-in-right relative rounded-l-3xl border-l-2 border-primary/40
+                  bg-gradient-to-br from-white to-gray-200 dark:from-[#18192a] dark:to-[#23243a] overflow-y-auto">
                   <button
                     className="absolute top-4 right-4 text-3xl hover:text-primary transition-colors"
                     aria-label="Menü schließen"
@@ -85,27 +86,50 @@ export default function Header() {
                     ×
                   </button>
                   <nav className="flex flex-col gap-6 mt-16">
-                    {menuItems.map((item) => (
-                      <Link
-                        key={item.to}
-                        to={item.to}
-                        className="text-xl font-bold px-4 py-3 rounded-xl hover:bg-primary/80 hover:text-primary-foreground focus:bg-primary/90 focus:text-primary-foreground active:scale-95 transition-all duration-200 shadow-md"
-                        onClick={() => setMobileOpen(false)}
-                      >
-                        {item.label}
-                      </Link>
-                    ))}
-                    {/* Howto Dropdown for mobile */}
-                    <div className="flex flex-col gap-1">
-                      <span className="text-xl font-bold px-4 py-3">Howto</span>
-                      <Link
-                        to="/howto/record-telemetry"
-                        className="text-base px-6 py-2 rounded-lg hover:bg-primary/80 hover:text-primary-foreground transition-colors"
-                        onClick={() => setMobileOpen(false)}
-                      >
-                        Record Telemetry
-                      </Link>
-                    </div>
+                    {menuItems.map((item, idx) => {
+                      if (item.children && Array.isArray(item.children)) {
+                        return (
+                          <div key={item.label || idx} className="flex flex-col gap-1">
+                            <span className="text-xl font-bold px-4 py-3">{item.label}</span>
+                            {item.children.map((child, cidx) => (
+                              <Link
+                                key={child.to || cidx}
+                                to={child.to}
+                                className="text-base px-6 py-2 rounded-lg hover:bg-primary/80 hover:text-primary-foreground transition-colors"
+                                onClick={() => setMobileOpen(false)}
+                              >
+                                {child.label}
+                              </Link>
+                            ))}
+                          </div>
+                        );
+                      }
+                      // External links open in new tab
+                      if (item.external) {
+                        return (
+                          <a
+                            key={item.to || idx}
+                            href={item.to}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-xl font-bold px-4 py-3 rounded-xl hover:bg-primary/80 hover:text-primary-foreground focus:bg-primary/90 focus:text-primary-foreground active:scale-95 transition-all duration-200 shadow-md"
+                            onClick={() => setMobileOpen(false)}
+                          >
+                            {item.label}
+                          </a>
+                        );
+                      }
+                      return (
+                        <Link
+                          key={item.to || idx}
+                          to={item.to}
+                          className="text-xl font-bold px-4 py-3 rounded-xl hover:bg-primary/80 hover:text-primary-foreground focus:bg-primary/90 focus:text-primary-foreground active:scale-95 transition-all duration-200 shadow-md"
+                          onClick={() => setMobileOpen(false)}
+                        >
+                          {item.label}
+                        </Link>
+                      );
+                    })}
                   </nav>
                 </div>
               </div>
