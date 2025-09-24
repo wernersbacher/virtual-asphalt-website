@@ -13,7 +13,7 @@
     npm install
     ```
 
-1. **Start the development server**
+2.. **Start the development server**
 
  Run:
     ```bash
@@ -31,7 +31,7 @@ After merging changes into the `main` branch, the website will be automatically 
 
 - Place your image file (e.g., `005-newrace.png`) in the folder: `src/img/rennkalender/`.
 
-1. **Add Description**
+2. **Add Description**
 
 - Create a `.txt` file with the same base name as the image (e.g., `005-newrace.txt`).
 - Write the description for the race in this text file.
