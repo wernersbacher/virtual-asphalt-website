@@ -7,3 +7,7 @@ count.txt
 .env
 .nitro
 .tanstack
+
+thumbnails/
+public/calenderGallery.json
+public/racingGallery.json

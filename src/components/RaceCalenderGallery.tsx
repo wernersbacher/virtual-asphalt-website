@@ -1,39 +1,36 @@
-// Vite import.meta.glob for static asset import
-const images = {
-  ...import.meta.glob('../img/rennkalender/*.jpg', { eager: true, as: 'url' }),
-  ...import.meta.glob('../img/rennkalender/*.png', { eager: true, as: 'url' }),
-};
-const descriptions = import.meta.glob('../img/rennkalender/*.txt', {
-  eager: true,
-  as: 'raw',
-});
+import { useEffect, useState } from "react";
 
-// Build gallery data: [{ name, img, description }]
-function getGalleryData() {
-  // Get all image file names (without extension)
-  const imageEntries = Object.entries(images);
-  return imageEntries
-    .map(([imgPath, imgUrl]) => {
-      // Extract base name (e.g., 'wald') for .jpg or .png
-      const match = imgPath.match(/([\w-]+)\.(jpg|png)$/);
-      const base = match?.[1] || '';
-      // Find matching description (key must match import.meta.glob pattern)
-      const descKey = `../img/rennkalender/${base}.txt`;
-      const rawDesc = descriptions[descKey];
-      const description = typeof rawDesc === 'string' ? rawDesc.trim() : '';
-      return { name: base, img: imgUrl, description };
-    })
-    .sort((a, b) => b.name.localeCompare(a.name));
+// Hilfsfunktion, um alle Bildnamen und Beschreibungen zu generieren
+function getGalleryList() {
+  // Die Dateinamen sind nicht dynamisch im Build bekannt, daher hier statisch pflegen oder per gallery.json laden
+  // Alternativ: gallery.json in public/img/rennkalender/ mit [{name, img, description}] bereitstellen
+  // Hier: Wir lesen gallery.json, falls vorhanden
+  return fetch("/calenderGallery.json")
+    .then((res) => (res.ok ? res.json() : []))
+    .catch(() => []);
 }
 
 export default function RaceCalendarGallery() {
-  const gallery = getGalleryData();
+  const [gallery, setGallery] = useState<
+    Array<{ name: string; img: string; description: string }>
+  >([]);
+
+  useEffect(() => {
+    getGalleryList().then((data) => {
+      setGallery(
+        Array.isArray(data)
+          ? data.sort((a, b) => b.name.localeCompare(a.name))
+          : []
+      );
+    });
+  }, []);
+
   return (
     <div className="flex flex-col gap-8">
       {gallery.map(({ name, img, description }) => (
         <div key={name} className="flex flex-col items-center">
           <img
-            src={img}
+            src={"/img/raceCalender/" + img}
             alt={name}
             className="w-full mx-auto h-auto object-contain"
           />

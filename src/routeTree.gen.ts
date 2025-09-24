@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as RulesRouteImport } from './routes/rules'
+import { Route as RacingGalleryRouteImport } from './routes/racingGallery'
 import { Route as GetStartedRouteImport } from './routes/get-started'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as ChampionshipsRouteImport } from './routes/championships'
@@ -21,6 +22,11 @@ import { Route as HowtoCreateSkinRouteImport } from './routes/howto/create-skin'
 const RulesRoute = RulesRouteImport.update({
   id: '/rules',
   path: '/rules',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RacingGalleryRoute = RacingGalleryRouteImport.update({
+  id: '/racingGallery',
+  path: '/racingGallery',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GetStartedRoute = GetStartedRouteImport.update({
@@ -64,6 +70,7 @@ export interface FileRoutesByFullPath {
   '/championships': typeof ChampionshipsRoute
   '/faq': typeof FaqRoute
   '/get-started': typeof GetStartedRoute
+  '/racingGallery': typeof RacingGalleryRoute
   '/rules': typeof RulesRoute
   '/howto/create-skin': typeof HowtoCreateSkinRoute
   '/howto/create-team': typeof HowtoCreateTeamRoute
@@ -74,6 +81,7 @@ export interface FileRoutesByTo {
   '/championships': typeof ChampionshipsRoute
   '/faq': typeof FaqRoute
   '/get-started': typeof GetStartedRoute
+  '/racingGallery': typeof RacingGalleryRoute
   '/rules': typeof RulesRoute
   '/howto/create-skin': typeof HowtoCreateSkinRoute
   '/howto/create-team': typeof HowtoCreateTeamRoute
@@ -85,6 +93,7 @@ export interface FileRoutesById {
   '/championships': typeof ChampionshipsRoute
   '/faq': typeof FaqRoute
   '/get-started': typeof GetStartedRoute
+  '/racingGallery': typeof RacingGalleryRoute
   '/rules': typeof RulesRoute
   '/howto/create-skin': typeof HowtoCreateSkinRoute
   '/howto/create-team': typeof HowtoCreateTeamRoute
@@ -97,6 +106,7 @@ export interface FileRouteTypes {
     | '/championships'
     | '/faq'
     | '/get-started'
+    | '/racingGallery'
     | '/rules'
     | '/howto/create-skin'
     | '/howto/create-team'
@@ -107,6 +117,7 @@ export interface FileRouteTypes {
     | '/championships'
     | '/faq'
     | '/get-started'
+    | '/racingGallery'
     | '/rules'
     | '/howto/create-skin'
     | '/howto/create-team'
@@ -117,6 +128,7 @@ export interface FileRouteTypes {
     | '/championships'
     | '/faq'
     | '/get-started'
+    | '/racingGallery'
     | '/rules'
     | '/howto/create-skin'
     | '/howto/create-team'
@@ -128,6 +140,7 @@ export interface RootRouteChildren {
   ChampionshipsRoute: typeof ChampionshipsRoute
   FaqRoute: typeof FaqRoute
   GetStartedRoute: typeof GetStartedRoute
+  RacingGalleryRoute: typeof RacingGalleryRoute
   RulesRoute: typeof RulesRoute
   HowtoCreateSkinRoute: typeof HowtoCreateSkinRoute
   HowtoCreateTeamRoute: typeof HowtoCreateTeamRoute
@@ -141,6 +154,13 @@ declare module '@tanstack/react-router' {
       path: '/rules'
       fullPath: '/rules'
       preLoaderRoute: typeof RulesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/racingGallery': {
+      id: '/racingGallery'
+      path: '/racingGallery'
+      fullPath: '/racingGallery'
+      preLoaderRoute: typeof RacingGalleryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/get-started': {
@@ -200,6 +220,7 @@ const rootRouteChildren: RootRouteChildren = {
   ChampionshipsRoute: ChampionshipsRoute,
   FaqRoute: FaqRoute,
   GetStartedRoute: GetStartedRoute,
+  RacingGalleryRoute: RacingGalleryRoute,
   RulesRoute: RulesRoute,
   HowtoCreateSkinRoute: HowtoCreateSkinRoute,
   HowtoCreateTeamRoute: HowtoCreateTeamRoute,

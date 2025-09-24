@@ -4,6 +4,7 @@ import React from "react";
 
 import headerImg from "../img/header/header.png";
 
+import { InlineExternalLink as ExternalLink } from "./Link";
 import { NavMenu } from "./NavMenu";
 import type { NavMenuItem } from "./NavMenu";
 import { Button } from "./ui/button";
@@ -12,6 +13,7 @@ const menuItems: Array<NavMenuItem> = [
   { to: "/", label: "Home" },
   { to: "/get-started", label: "Get Started" },
   { to: "/championships", label: "Championships" },
+  { to: "/racingGallery", label: "Images" },
   { to: "/rules", label: "Reglement" },
   { to: "/faq", label: "FAQ" },
   {
@@ -35,7 +37,7 @@ export default function Header() {
     <div className="w-full flex justify-center bg-transparent mt-3">
       <div className="w-full">
         <div
-          className="rounded-t-xl shadow flex flex-col items-center gap-2 p-2 bg-gradient-to-r"
+          className="rounded-t-xl shadow flex flex-col items-center gap-1 p-1 bg-gradient-to-r"
           style={{
             backgroundImage:
               "linear-gradient(to right, var(--va-gradient-1, #0f0c29), var(--va-gradient-2, #302b63), var(--va-gradient-3, #24243e))",
@@ -116,7 +118,7 @@ export default function Header() {
                     // External links open in new tab
                     if (item.external) {
                       return (
-                        <a
+                        <ExternalLink
                           key={item.to || idx}
                           href={item.to}
                           target="_blank"
@@ -125,7 +127,7 @@ export default function Header() {
                           onClick={() => setMobileOpen(false)}
                         >
                           {item.label}
-                        </a>
+                        </ExternalLink>
                       );
                     }
                     return (
