@@ -41,8 +41,17 @@ async function main(): Promise<void> {
     const files = fs
       .readdirSync(albumDir)
       .filter((file) => /(jpg|jpeg|png)$/i.test(file));
+    // Sort files by mtime (newest first)
+    const filesSorted = files
+      .map((file) => {
+        const imgPath = path.join(albumDir, file);
+        const stat = fs.statSync(imgPath);
+        return { file, mtime: stat.mtime };
+      })
+      .sort((a, b) => b.mtime.getTime() - a.mtime.getTime())
+      .map((entry) => entry.file);
     const images = [];
-    for (const file of files) {
+    for (const file of filesSorted) {
       const imgPath = path.join(albumDir, file);
       const relImg = `/img/racingGallery/${album}/${file}`;
       const thumbName = `${file.replace(/\.(jpg|jpeg|png)$/i, "_thumb.jpg")}`;
