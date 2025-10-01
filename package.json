@@ -6,7 +6,7 @@
     "dev": "npm run prebuild && vite --port 3000",
     "start": "vite --port 3000",
     "preview": "vite preview",
-    "prebuild": "node build-gallery.ts && node build-calender.ts",
+    "prebuild": "node scripts/build-gallery.ts && node scripts/build-calendar.ts",
     "build": "vite build && tsc",
     "serve": "vite preview",
     "test": "vitest run",
