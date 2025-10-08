@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
 import { InfoBlock } from "../components/InfoBlock";
-import { InlineExternalLink } from "../components/Link";
 import LatestRaceCalendarImage from "../components/LatestRaceCalendarImage";
+import { InlineExternalLink } from "../components/Link";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
