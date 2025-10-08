@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 
 import { InfoBlock } from "../components/InfoBlock";
 import { InlineExternalLink } from "../components/Link";
+import LatestRaceCalendarImage from "../components/LatestRaceCalendarImage";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
@@ -22,6 +23,7 @@ function HomePage() {
         every new driver, whether you are a complete beginner or a long-time sim
         enthusiast.
       </p>
+
 
       {/* Quick Links Section */}
       <div className="flex flex-col sm:flex-row justify-center gap-4 my-3">
@@ -44,6 +46,9 @@ function HomePage() {
           Image Gallery
         </Link>
       </div>
+
+    
+      <LatestRaceCalendarImage />
 
       <InfoBlock color="blue">
         <p className="text-base">
