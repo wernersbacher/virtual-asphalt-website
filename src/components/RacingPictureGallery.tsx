@@ -26,7 +26,7 @@ const RacingPictureGallery: React.FC = () => {
 
   // Load gallery.json on mount
   useEffect(() => {
-    fetch("/racingGallery.json")
+    fetch("/data/racingGallery.json")
       .then((res) => res.json())
       .then((data: Album[]) => {
         setAlbums(data);

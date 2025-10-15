@@ -9,5 +9,5 @@ count.txt
 .tanstack
 
 thumbnails/
-public/calenderGallery.json
-public/racingGallery.json
+public/data/calenderGallery.json
+public/data/racingGallery.json

@@ -9,7 +9,7 @@ const publicDir = path.join(__dirname, "public");
 
 const GALLERY_DIR = path.join(publicDir, "img", "racingGallery");
 const PUBLIC_THUMB_ROOT = path.join(publicDir, "img", "thumbnails");
-const OUTPUT_JSON = path.join(publicDir, "racingGallery.json");
+const OUTPUT_JSON = path.join(publicDir, "data", "racingGallery.json");
 
 const THUMB_WIDTH = 400;
 
