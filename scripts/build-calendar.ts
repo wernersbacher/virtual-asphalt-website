@@ -8,7 +8,7 @@ const __dirname = path.resolve();
 const publicDir = path.join(__dirname, "public");
 
 const imgFiles = path.join(publicDir, "img", "raceCalender");
-const outFile = path.join(publicDir, "calenderGallery.json");
+const outFile = path.join(publicDir, "data", "calenderGallery.json");
 
 function getFiles(): string[] {
   return fs.readdirSync(imgFiles).filter((f) => /\.(jpg|png)$/i.test(f));

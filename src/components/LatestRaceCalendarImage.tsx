@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 function getGalleryList() {
-  return fetch("/calenderGallery.json")
+  return fetch("/data/calenderGallery.json")
     .then((res) => (res.ok ? res.json() : []))
     .catch(() => []);
 }
