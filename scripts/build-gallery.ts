@@ -67,6 +67,11 @@ async function main(): Promise<void> {
     gallery.push({ album, images });
   }
 
+  // Ensure the data directory exists before writing the JSON file
+  const outputJsonDir = path.dirname(OUTPUT_JSON);
+  if (!fs.existsSync(outputJsonDir)) {
+    fs.mkdirSync(outputJsonDir, { recursive: true });
+  }
   fs.writeFileSync(OUTPUT_JSON, JSON.stringify(gallery, null, 2));
 }
 
