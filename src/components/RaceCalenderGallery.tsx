@@ -1,10 +1,6 @@
 import { useEffect, useState } from "react";
 
-// Hilfsfunktion, um alle Bildnamen und Beschreibungen zu generieren
 function getGalleryList() {
-  // Die Dateinamen sind nicht dynamisch im Build bekannt, daher hier statisch pflegen oder per gallery.json laden
-  // Alternativ: gallery.json in public/img/rennkalender/ mit [{name, img, description}] bereitstellen
-  // Hier: Wir lesen gallery.json, falls vorhanden
   return fetch("/calenderGallery.json")
     .then((res) => (res.ok ? res.json() : []))
     .catch(() => []);

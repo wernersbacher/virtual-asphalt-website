@@ -1,6 +1,3 @@
-// build-gallery.js
-// Node.js-Skript: Generiert Thumbnails und eine JSON-Liste aller Bilder für die Galerie
-
 import fs from "fs";
 import path from "path";
 
@@ -29,7 +26,7 @@ async function main(): Promise<void> {
 
   const gallery: Array<{
     album: string;
-    images: Array<{ image: string; thumbnail: string }>;
+    images: Array<{ image: string; thumbnail: string; mtime: number }>;
   }> = [];
 
   for (const album of albums) {
@@ -53,6 +50,7 @@ async function main(): Promise<void> {
     const images = [];
     for (const file of filesSorted) {
       const imgPath = path.join(albumDir, file);
+      const stat = fs.statSync(imgPath);
       const relImg = `/img/racingGallery/${album}/${file}`;
       const thumbName = `${file.replace(/\.(jpg|jpeg|png)$/i, "_thumb.jpg")}`;
       const thumbPath = path.join(thumbAlbumDir, thumbName);
@@ -63,6 +61,7 @@ async function main(): Promise<void> {
       images.push({
         image: relImg,
         thumbnail: `/img/thumbnails/${album}/${thumbName}`,
+        mtime: stat.mtime.getTime(),
       });
     }
     gallery.push({ album, images });

@@ -6,6 +6,7 @@ type GalleryImage = {
   image: string;
   thumbnail: string;
   album: string;
+  mtime?: number;
 };
 type Album = {
   album: string;
@@ -29,26 +30,29 @@ const RacingPictureGallery: React.FC = () => {
       .then((res) => res.json())
       .then((data: Album[]) => {
         setAlbums(data);
-        setImages(
-          data.flatMap((a) =>
-            a.images.map((img) => ({ ...img, album: a.album }))
-          )
-        );
+        // For 'All', sort by mtime descending
+        const allImages = data
+          .flatMap((a) => a.images.map((img) => ({ ...img, album: a.album })))
+          .sort((a, b) => (b.mtime ?? 0) - (a.mtime ?? 0));
+        setImages(allImages);
       });
   }, []);
 
   // Update images when albumFilter changes
   useEffect(() => {
     if (albumFilter === "All") {
-      setImages(
-        albums.flatMap((a) =>
-          a.images.map((img) => ({ ...img, album: a.album }))
-        )
-      );
+      const allImages = albums
+        .flatMap((a) => a.images.map((img) => ({ ...img, album: a.album })))
+        .sort((a, b) => (b.mtime ?? 0) - (a.mtime ?? 0));
+      setImages(allImages);
     } else {
       const album = albums.find((a) => a.album === albumFilter);
       setImages(
-        album ? album.images.map((img) => ({ ...img, album: album.album })) : []
+        album
+          ? album.images
+              .map((img) => ({ ...img, album: album.album }))
+              .sort((a, b) => (b.mtime ?? 0) - (a.mtime ?? 0))
+          : []
       );
     }
     setSelectedIdx(null);
