@@ -13,7 +13,7 @@ const menuItems: Array<NavMenuItem> = [
   { to: "/", label: "Home" },
   { to: "/get-started", label: "Get Started" },
   { to: "/championships", label: "Championships" },
-  { to: "/racingGallery", label: "Images" },
+  { to: "/racingGallery", label: "Gallery" },
   { to: "/rules", label: "Reglement" },
   { to: "/faq", label: "FAQ" },
   {
