@@ -3,9 +3,17 @@
   
   RewriteBase /
   
-  RewriteCond %{REQUEST_FILENAME} -f
+  # Nicht umschreiben für vorhandene Dateien
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
+  
+  # Nicht umschreiben für assets, public oder andere spezifische Verzeichnisse
+  RewriteCond %{REQUEST_URI} ^/(assets|public|static|img|data)/ 
+  RewriteRule ^ - [L]
+  
+  # Nicht umschreiben für Dateien mit Dateiendung (außer HTML)
+  RewriteCond %{REQUEST_FILENAME} !\.(js|css|json|png|jpg|jpeg|gif|svg|webp|ico|woff|woff2|ttf|eot)$
   
   # Alle anderen Anfragen zu index.html umleiten (für React Router)
   RewriteRule ^ index.html [QSA,L]
