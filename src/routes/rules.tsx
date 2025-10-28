@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import { InlineExternalLink } from "../components/Link";
 import {
   Card,
   CardContent,
@@ -34,12 +33,12 @@ function TocList({
     <ul className={baseUl + " space-y-1"}>
       {sections.map((section) => (
         <li key={section.id} className={liClass}>
-          <InlineExternalLink
+          <a
             href={`#${section.id}`}
             className="text-primary font-medium hover:underline focus:underline focus:outline-none transition-colors duration-100 px-1 py-0.5 rounded focus:bg-accent hover:bg-accent"
           >
             {section.title}
-          </InlineExternalLink>
+          </a>
           {section.subsections && (
             <TocList sections={section.subsections} level={level + 1} />
           )}
