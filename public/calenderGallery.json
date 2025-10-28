@@ -1,0 +1,37 @@
+[
+  {
+    "name": "016-rss3",
+    "img": "016-rss3.jpg",
+    "description": "Campionato Monoposto - Autumn '25 - RSS Formula 3"
+  },
+  {
+    "name": "015-porsche25",
+    "img": "015-porsche25.png",
+    "description": "Porsche Cup - Spring '25"
+  },
+  {
+    "name": "014-gtmasters_25",
+    "img": "014-gtmasters_25.jpg",
+    "description": "vGT Masters Spring '25"
+  },
+  {
+    "name": "013-tcr2425",
+    "img": "013-tcr2425.png",
+    "description": "vTCR - Winter '24/'25"
+  },
+  {
+    "name": "012-lmp3",
+    "img": "012-lmp3.png",
+    "description": "Campionato Monoposto - Autumn '24 - LMP3"
+  },
+  {
+    "name": "011-flyer_SummerCup_24",
+    "img": "011-flyer_SummerCup_24.jpg",
+    "description": "GT2 Summer Cup '24"
+  },
+  {
+    "name": "010-MX5-Cup_spring_24",
+    "img": "010-MX5-Cup_spring_24.jpg",
+    "description": "MX5 Cup Spring '24"
+  }
+]
