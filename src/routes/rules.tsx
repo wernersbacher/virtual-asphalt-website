@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
+import { InlineExternalLink } from "../components/Link";
 import {
   Card,
   CardContent,
@@ -29,28 +30,16 @@ function TocList({
     level === 0
       ? "mb-1"
       : 'mb-1 relative before:content-["•"] before:absolute before:-left-3 before:text-muted-foreground';
-
-  const handleSectionClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    sectionId: string
-  ) => {
-    e.preventDefault();
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <ul className={baseUl + " space-y-1"}>
       {sections.map((section) => (
         <li key={section.id} className={liClass}>
-          <a
-            onClick={(e) => handleSectionClick(e, section.id)}
+          <InlineExternalLink
+            href={`#${section.id}`}
             className="text-primary font-medium hover:underline focus:underline focus:outline-none transition-colors duration-100 px-1 py-0.5 rounded focus:bg-accent hover:bg-accent"
           >
             {section.title}
-          </a>
+          </InlineExternalLink>
           {section.subsections && (
             <TocList sections={section.subsections} level={level + 1} />
           )}
