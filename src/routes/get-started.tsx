@@ -11,96 +11,81 @@ export default function GetStarted() {
   return (
     <>
       <h1 className="text-4xl font-extrabold mb-2 tracking-tight text-center drop-shadow-lg">
-        Get Started
+        Get Started — Virtual Asphalt
       </h1>
-      <p className="text-lg leading-relaxed">
-        To join the ride, you need the{" "}
-        <InlineExternalLink href="https://assettocorsa.club/content-manager.html">
-          Content Manager
-        </InlineExternalLink>
-        , CSP and{" "}
-        <InlineExternalLink href="https://www.patreon.com/posts/92150073?collection=157721">
-          Real Penalty
-        </InlineExternalLink>
-        . Then you can practice on our servers. To practice, no registration is
-        needed. For the championship races, a registration is needed or highly
-        recommended. You can find all upcoming races in{" "}
-        <InlineExternalLink href="https://acswui.virtual-asphalt.org/">
-          ACSwui
-        </InlineExternalLink>
-        . Participation is completely free of charge. You can find our community
-        on Discord:
-      </p>
-      <div className="flex flex-col items-center gap-2">
-        <InlineExternalLink href="https://discord.gg/BaZxrzvmGu">
-          <img
-            src="https://discordapp.com/api/guilds/783402138055344169/widget.png?style=banner2"
-            alt="Discord Banner"
-            className="rounded-md border border-blue-300 w-full max-w-xs"
-          />
-        </InlineExternalLink>
-        <InlineExternalLink href="https://discord.gg/BaZxrzvmGu">
-          Join Discord
-        </InlineExternalLink>
-      </div>
 
-      <InfoBlock color="blue" title="Needed Apps & Training">
+      <p className="text-lg leading-relaxed">
+        Welcome! This page walks you through the minimal steps to join our races
+        and championships. Rookies are very welcome.
+      </p>
+
+      <InfoBlock color="blue" title="How to get started">
         <ol className="list-decimal list-inside space-y-1 pl-2">
           <li>
-            Buy and install <span className="font-semibold">Assetto Corsa</span>
-            .
+            Install{" "}
+            <InlineExternalLink href="https://www.patreon.com/posts/92150073?collection=157721">
+              Real Penalty
+            </InlineExternalLink>{" "}
+            and enable it under{" "}
+            <span className="font-semibold">Python Apps</span>.
           </li>
           <li>
-            Install <span className="font-semibold">Content Manager</span>.
+            Install a car radar app. We recommend either the built-in Real
+            Penalty Helicorsa or car radar. This helps you see cars around you.
           </li>
           <li>
-            Go to <span className="font-semibold">Settings &rarr; CSP</span> and
-            install <span className="font-semibold">Custom Shader Patch</span>.
-          </li>
-          <li>
-            Install <span className="font-semibold">Real Penalty</span> and
-            activate it under Python Apps.
-          </li>
-          <li>
-            Depending on the race series, additional mods may be required. These
-            can be installed via Content Manager or manually if necessary. All
-            required mods can also be found in{" "}
+            Install required content for the race or championship (cars and
+            track). Download links for the specific event are available in{" "}
             <InlineExternalLink href="https://acswui.virtual-asphalt.org/">
               ACSwui
             </InlineExternalLink>
             .
+          </li>
+          <li>
+            Drive one valid lap on one of our race servers (Search for
+            virtual-asphalt or click the join links in{" "}
+            <InlineExternalLink href="https://acswui.virtual-asphalt.org/">
+              ACSwui
+            </InlineExternalLink>
+            ). Password:
+            <span className="font-semibold">vARacing</span>
+          </li>
+          <li>
+            Log in to our race management system{" "}
+            <InlineExternalLink href="https://acswui.virtual-asphalt.org/">
+              ACSwui
+            </InlineExternalLink>
+            , then register for the championship or a race and pick any
+            available skin.
           </li>
         </ol>
       </InfoBlock>
 
-      <InfoBlock color="gray" title="Participation in Championships">
+      <InfoBlock color="green" title="On race day">
         <ol className="list-decimal list-inside space-y-1 pl-2">
           <li>
-            Join our Discord for help and answers:{" "}
+            Join the server early. Practice starts at{" "}
+            <span className="font-semibold">18:30 CET</span>. Note: the server
+            may be offline before practice starts. ALso you need to register
+            before the server opens for practice.
+          </li>
+          <li>
+            Enable your apps:{" "}
+            <span className="font-semibold">Real Penalty</span>, your car radar
+            (or Helicorsa), and enable the virtual rearmirror (default key{" "}
+            <span className="font-semibold">F11</span>).
+          </li>
+          <li>
+            Join Discord voice if you can, it makes things easier and more fun.
+            (Join here:{" "}
             <InlineExternalLink href="https://discord.gg/BaZxrzvmGu">
-              https://discord.gg/BaZxrzvmGu
+              Discord
             </InlineExternalLink>
+            )
           </li>
           <li>
-            Join the race times on the right server and race with us – you can
-            find the server links in{" "}
-            <InlineExternalLink href="https://acswui.virtual-asphalt.org/">
-              ACSwui
-            </InlineExternalLink>
-            .
-          </li>
-          <li>
-            If you want your own skin and to manage your team, log into the{" "}
-            <InlineExternalLink href="https://acswui.virtual-asphalt.org/">
-              ACSwui
-            </InlineExternalLink>{" "}
-            race management system with your Steam account. The process is not
-            so easy, so please join our Discord 🙂
-            <br />
-            <span className="text-xs text-gray-500 dark:text-gray-400">
-              *Login to ACSwui is only possible if you have already driven a
-              valid lap on one of our servers.
-            </span>
+            Drive clean: don&#39;t crash into others, use your mirrors and be
+            fair. Respect race etiquette. If you need help, ask in Discord.
           </li>
         </ol>
       </InfoBlock>

@@ -1,38 +1,44 @@
-import React from 'react';
+import React from "react";
 
 interface InfoBlockProps {
-  color?: 'blue' | 'yellow' | 'gray'
-  title?: string
-  children: React.ReactNode
-  className?: string
+  color?: "blue" | "yellow" | "gray" | "green";
+  title?: string;
+  children: React.ReactNode;
+  className?: string;
 }
 
 const colorMap = {
   blue: {
-    bg: 'bg-blue-50 dark:bg-blue-900/30',
-    border: 'border-blue-400 dark:border-blue-500',
-    title: 'text-blue-900 dark:text-blue-100',
-    text: 'text-blue-900 dark:text-blue-100',
+    bg: "bg-blue-50 dark:bg-blue-900/30",
+    border: "border-blue-400 dark:border-blue-500",
+    title: "text-blue-900 dark:text-blue-100",
+    text: "text-blue-900 dark:text-blue-100",
   },
   yellow: {
-    bg: 'bg-yellow-50 dark:bg-yellow-900/30',
-    border: 'border-yellow-400 dark:border-yellow-500',
-    title: 'text-yellow-900 dark:text-yellow-100',
-    text: 'text-yellow-900 dark:text-yellow-100',
+    bg: "bg-yellow-50 dark:bg-yellow-900/30",
+    border: "border-yellow-400 dark:border-yellow-500",
+    title: "text-yellow-900 dark:text-yellow-100",
+    text: "text-yellow-900 dark:text-yellow-100",
   },
   gray: {
-    bg: 'bg-gray-100 dark:bg-gray-800',
-    border: '',
-    title: 'text-gray-900 dark:text-white',
-    text: 'text-gray-700 dark:text-gray-200',
+    bg: "bg-gray-100 dark:bg-gray-800",
+    border: "",
+    title: "text-gray-900 dark:text-white",
+    text: "text-gray-700 dark:text-gray-300",
+  },
+  green: {
+    bg: "bg-green-100 dark:bg-green-800",
+    border: "",
+    title: "text-green-900 dark:text-white",
+    text: "text-green-700 dark:text-green-500",
   },
 };
 
 export function InfoBlock({
-  color = 'blue',
+  color = "blue",
   title,
   children,
-  className = '',
+  className = "",
 }: InfoBlockProps) {
   const c = colorMap[color];
   return (
