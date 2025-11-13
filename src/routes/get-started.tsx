@@ -15,9 +15,23 @@ export default function GetStarted() {
       </h1>
 
       <p className="text-lg leading-relaxed">
-        Welcome! This page walks you through the minimal steps to join our races
-        and championships. Rookies are very welcome.
+        Welcome! This page walks you through the steps to join our races and
+        championships. Rookies are very welcome. Participation is completely
+        free of charge. You can find our community on Discord:
       </p>
+
+      <div className="flex flex-col items-center gap-2">
+        <InlineExternalLink href="https://discord.gg/BaZxrzvmGu">
+          <img
+            src="https://discordapp.com/api/guilds/783402138055344169/widget.png?style=banner2"
+            alt="Discord Banner"
+            className="rounded-md border border-blue-300 w-full max-w-xs"
+          />
+        </InlineExternalLink>
+        <InlineExternalLink href="https://discord.gg/BaZxrzvmGu">
+          Join Discord
+        </InlineExternalLink>
+      </div>
 
       <InfoBlock color="blue" title="How to get started">
         <ol className="list-decimal list-inside space-y-1 pl-2">
