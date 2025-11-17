@@ -12,7 +12,8 @@ import { Button } from "./ui/button";
 const menuItems: Array<NavMenuItem> = [
   { to: "/", label: "Home" },
   { to: "/get-started", label: "Get Started" },
-  { to: "/championships", label: "Championships" },
+  { to: "/evo", label: "AC Evo" },
+  { to: "/championships", label: "Races" },
   { to: "/racingGallery", label: "Gallery" },
   { to: "/rules", label: "Reglement" },
   { to: "/faq", label: "FAQ" },
