@@ -11,7 +11,7 @@ export default function GetStarted() {
   return (
     <>
       <h1 className="text-4xl font-extrabold mb-2 tracking-tight text-center drop-shadow-lg">
-        Get Started — Virtual Asphalt
+        Get Started — Assetto Corsa
       </h1>
 
       <p className="text-lg leading-relaxed">

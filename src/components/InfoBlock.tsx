@@ -1,7 +1,7 @@
 import React from "react";
 
 interface InfoBlockProps {
-  color?: "blue" | "yellow" | "gray" | "green";
+  color?: "blue" | "yellow" | "gray" | "green" | "red";
   title?: string;
   children: React.ReactNode;
   className?: string;
@@ -31,6 +31,12 @@ const colorMap = {
     border: "",
     title: "text-green-900 dark:text-white",
     text: "text-green-700 dark:text-green-500",
+  },
+  red: {
+    bg: "bg-red-100 dark:bg-red-800",
+    border: "",
+    title: "text-red-900 dark:text-white",
+    text: "text-red-700 dark:text-red-500",
   },
 };
 
