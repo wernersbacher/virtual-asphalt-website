@@ -13,6 +13,7 @@ import { Route as RulesRouteImport } from './routes/rules'
 import { Route as RacingGalleryRouteImport } from './routes/racingGallery'
 import { Route as GetStartedRouteImport } from './routes/get-started'
 import { Route as FaqRouteImport } from './routes/faq'
+import { Route as EvoRouteImport } from './routes/evo'
 import { Route as ChampionshipsRouteImport } from './routes/championships'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as HowtoRecordTelemetryRouteImport } from './routes/howto/record-telemetry'
@@ -37,6 +38,11 @@ const GetStartedRoute = GetStartedRouteImport.update({
 const FaqRoute = FaqRouteImport.update({
   id: '/faq',
   path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EvoRoute = EvoRouteImport.update({
+  id: '/evo',
+  path: '/evo',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ChampionshipsRoute = ChampionshipsRouteImport.update({
@@ -68,6 +74,7 @@ const HowtoCreateSkinRoute = HowtoCreateSkinRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/championships': typeof ChampionshipsRoute
+  '/evo': typeof EvoRoute
   '/faq': typeof FaqRoute
   '/get-started': typeof GetStartedRoute
   '/racingGallery': typeof RacingGalleryRoute
@@ -79,6 +86,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/championships': typeof ChampionshipsRoute
+  '/evo': typeof EvoRoute
   '/faq': typeof FaqRoute
   '/get-started': typeof GetStartedRoute
   '/racingGallery': typeof RacingGalleryRoute
@@ -91,6 +99,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/championships': typeof ChampionshipsRoute
+  '/evo': typeof EvoRoute
   '/faq': typeof FaqRoute
   '/get-started': typeof GetStartedRoute
   '/racingGallery': typeof RacingGalleryRoute
@@ -104,6 +113,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/championships'
+    | '/evo'
     | '/faq'
     | '/get-started'
     | '/racingGallery'
@@ -115,6 +125,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/championships'
+    | '/evo'
     | '/faq'
     | '/get-started'
     | '/racingGallery'
@@ -126,6 +137,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/championships'
+    | '/evo'
     | '/faq'
     | '/get-started'
     | '/racingGallery'
@@ -138,6 +150,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ChampionshipsRoute: typeof ChampionshipsRoute
+  EvoRoute: typeof EvoRoute
   FaqRoute: typeof FaqRoute
   GetStartedRoute: typeof GetStartedRoute
   RacingGalleryRoute: typeof RacingGalleryRoute
@@ -175,6 +188,13 @@ declare module '@tanstack/react-router' {
       path: '/faq'
       fullPath: '/faq'
       preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/evo': {
+      id: '/evo'
+      path: '/evo'
+      fullPath: '/evo'
+      preLoaderRoute: typeof EvoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/championships': {
@@ -218,6 +238,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ChampionshipsRoute: ChampionshipsRoute,
+  EvoRoute: EvoRoute,
   FaqRoute: FaqRoute,
   GetStartedRoute: GetStartedRoute,
   RacingGalleryRoute: RacingGalleryRoute,
