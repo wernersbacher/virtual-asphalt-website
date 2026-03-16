@@ -11,21 +11,21 @@ export const Route = createFileRoute("/evo")({
 export default function Evo() {
   return (
     <>
-      <div className="mb-8">
+      <div className="mb-2">
         <h1 className="text-4xl font-extrabold mb-4 tracking-tight text-center drop-shadow-lg">
-          Assetto Corsa Evo - Proof of Racing Championship
+          Assetto Corsa Evo - Fun Races are on
         </h1>
         <p className="text-lg leading-relaxed max-w-3xl mx-auto">
           We are equally excited as you are about the upcoming Assetto Corsa Evo
-          game. Therefore, we are organizing a testing championship. Read this
-          page and join our Discord to get started!
+          game. Once in a month we organize a fun race. We use Pitvox competitions for registration and results.
+          Just sign up and join our Discord!
         </p>
       </div>
 
-
       <div className="mt-0">
-        <h2 className="text-2xl font-bold text-center mb-4">Upcoming competitions</h2>
+        <h2 className="text-2xl font-bold text-center mb-4">Upcoming competitions - check on <InlineExternalLink className="text-blue-600 hover:text-blue-800" href="https://pitvox.com/p/virtual-asphalt?tab=competitions">Pitvox</InlineExternalLink></h2>
         <Competitions />
+        <h3 className="text-center mt-1">Also check out our <InlineExternalLink href="https://pitvox.com/p/virtual-asphalt">Pitvox ACE Leaderboard</InlineExternalLink></h3>
       </div>
 
       <div className="flex flex-col items-center gap-2">
@@ -57,22 +57,6 @@ export default function Evo() {
         </div>
       </div>
 
-
-      <InfoBlock color="green" title="Racing schedule">
-        The server will be online 24/7. You can join the server anytime to
-        practice. As the server manager is quite simple for now, a race session
-        will also start after the practice. For the race day, the server will
-        manually restarted, so at 18:00 CET the practice begins and the quali is
-        at around 20:00 CET. After 7 min quali and 20 min race we restart the
-        sessions and do another quali/race session. Both results will be
-        combined for the championship points.
-      </InfoBlock>
-
-      <div className="text-center">
-        <InlineExternalLink href="https://docs.google.com/spreadsheets/d/1B48ugcX6FzBp2t-fee6W154KjW16XduHujoEHNOgZSo/edit?usp=sharing">
-          Current championship standings
-        </InlineExternalLink>
-      </div>
     </>
   );
 }

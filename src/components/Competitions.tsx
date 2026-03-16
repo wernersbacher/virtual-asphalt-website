@@ -22,6 +22,7 @@ type Competition = {
   name: string;
   type: string;
   game: string;
+  formatDescription?: string | null;
   description?: string | null;
   posterCdnPath?: string | null;
   platform?: string | null;
@@ -90,36 +91,41 @@ export default function Competitions() {
         return (
           <div
             key={c.id}
-            className="border rounded-md p-4 shadow-sm bg-white dark:bg-slate-800"
+            className="border border-slate-200 dark:border-slate-700 rounded-md p-4 shadow-sm bg-white dark:bg-slate-900"
           >
             <div className="flex items-start gap-4">
-              {posterUrl && (
+                {posterUrl && (
                 <img
                   src={posterUrl}
                   alt={`${c.name} poster`}
-                  className="w-28 h-28 object-cover rounded-md border"
+                  className="w-28 h-28 object-cover rounded-md border border-slate-200 dark:border-slate-700"
                 />
               )}
 
               <div className="flex-1">
                 <div className="flex items-baseline justify-between">
-                  <h3 className="text-xl font-semibold">{c.name}</h3>
-                  <div className="text-sm text-slate-500">
+                  <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-100">{c.name}</h3>
+                  <div className="text-sm text-slate-500 dark:text-slate-400">
                     {c.platform ?? ""} · {c.type}
                   </div>
                 </div>
 
                 {c.description && (
-                  <p className="mt-2 text-slate-700">{c.description}</p>
+                  <p className="mt-2 text-slate-700 dark:text-slate-300">{c.description}</p>
                 )}
 
-                <div className="mt-3 text-sm text-slate-600 flex  gap-4">
+                {c.formatDescription && (
+                  <div className="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                    <span className="font-medium">Format:</span> {c.formatDescription}
+                  </div>
+                )}
+                <div className="mt-3 text-sm text-slate-600 dark:text-slate-400 flex items-center gap-4">
                   <span className="font-medium">Registration:</span>{" "}
                   <div>
                     {c.registration.isOpen ? (
-                      <span className="text-green-600">Open</span>
+                      <span className="text-green-600 dark:text-green-400">Open</span>
                     ) : (
-                      <span className="text-red-600">Closed</span>
+                      <span className="text-red-600 dark:text-red-400">Closed</span>
                     )}{" "}
                     {c.registration.maxParticipants && (
                       <span>
@@ -133,7 +139,7 @@ export default function Competitions() {
                       href={`https://pitvox.com/p/${c.partnerSlug ?? "virtual-asphalt"}/competitions/${c.id}/register`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="ml-4 inline-block bg-blue-600 text-white text-sm px-3 py-1 rounded hover:bg-blue-700"
+                      className="ml-4 inline-block bg-blue-600 text-white text-sm px-3 py-1 rounded hover:bg-blue-700 dark:bg-indigo-600 dark:hover:bg-indigo-700"
                     >
                       Register
                     </a>
@@ -143,22 +149,22 @@ export default function Competitions() {
             </div>
 
             <div className="mt-4">
-              <h4 className="font-semibold mb-2">Rounds</h4>
+              <h4 className="font-semibold mb-2 text-slate-900 dark:text-slate-100">Rounds</h4>
               <div className="space-y-2">
                 {c.rounds.map((r) => (
                   <div
                     key={`${c.id}-r-${r.roundNumber}`}
-                    className="border rounded p-2 bg-slate-50 dark:bg-slate-700"
+                    className="border border-slate-200 dark:border-slate-700 rounded p-2 bg-slate-50 dark:bg-slate-800"
                   >
                     <div className="flex justify-between items-center">
                       <div>
                         <div className="font-medium">Round {r.roundNumber}</div>
-                        <div className="text-sm text-slate-600">{r.track}</div>
+                        <div className="text-sm text-slate-600 dark:text-slate-300">{r.track}</div>
                         {r.carsDescription && (
-                          <div className="text-sm text-slate-600">{r.carsDescription}</div>
+                          <div className="text-sm text-slate-600 dark:text-slate-300">{r.carsDescription}</div>
                         )}
                       </div>
-                      <div className="text-sm text-slate-500">
+                      <div className="text-sm text-slate-500 dark:text-slate-400">
                         {new Date(r.startTime).toLocaleString()}
                       </div>
                     </div>
