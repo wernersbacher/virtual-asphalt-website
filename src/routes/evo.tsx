@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
+import Competitions from "../components/Competitions";
 import { InfoBlock } from "../components/InfoBlock";
 import { InlineExternalLink } from "../components/Link";
 
@@ -14,12 +15,17 @@ export default function Evo() {
         <h1 className="text-4xl font-extrabold mb-4 tracking-tight text-center drop-shadow-lg">
           Assetto Corsa Evo - Proof of Racing Championship
         </h1>
-
         <p className="text-lg leading-relaxed max-w-3xl mx-auto">
           We are equally excited as you are about the upcoming Assetto Corsa Evo
           game. Therefore, we are organizing a testing championship. Read this
           page and join our Discord to get started!
         </p>
+      </div>
+
+
+      <div className="mt-0">
+        <h2 className="text-2xl font-bold text-center mb-4">Upcoming competitions</h2>
+        <Competitions />
       </div>
 
       <div className="flex flex-col items-center gap-2">
@@ -51,13 +57,6 @@ export default function Evo() {
         </div>
       </div>
 
-      <div className="flex justify-center">
-        <img
-          src="/img/raceCalender/017-acEvo.png"
-          alt="Assetto Corsa Evo Championship Calendar"
-          className="rounded-md border border-gray-300 max-w-full h-auto shadow-lg"
-        />
-      </div>
 
       <InfoBlock color="green" title="Racing schedule">
         The server will be online 24/7. You can join the server anytime to
