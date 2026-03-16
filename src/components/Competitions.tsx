@@ -48,8 +48,14 @@ export default function Competitions() {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
         if (!cancelled) setCompetitions(data.competitions ?? []);
-      } catch (err: any) {
-        if (!cancelled) setError(err?.message ?? String(err));
+      } catch (err: unknown) {
+        if (!cancelled) {
+          if (err instanceof Error) {
+            setError(err.message);
+          } else {
+            setError(String(err));
+          }
+        }
       } finally {
         if (!cancelled) setLoading(false);
       }
