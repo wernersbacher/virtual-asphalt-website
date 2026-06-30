@@ -28,7 +28,7 @@ export default function LatestRaceCalendarImage() {
   return (
     <div className="flex flex-col items-center gap-2">
       <img
-        src={"/img/raceCalender/" + latest.img}
+        src={latest.img}
         alt={latest.name}
         className="w-full max-w-md mx-auto h-auto object-contain rounded shadow"
       />
