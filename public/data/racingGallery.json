@@ -240,6 +240,21 @@
     ]
   },
   {
+    "album": "LaMei",
+    "images": [
+      {
+        "image": "/img/racingGallery/LaMei/GT4_Sebring_2.jpg",
+        "thumbnail": "/img/thumbnails/LaMei/GT4_Sebring_2_thumb.jpg",
+        "mtime": 1759242061397
+      },
+      {
+        "image": "/img/racingGallery/LaMei/GT4_Sebring.jpg",
+        "thumbnail": "/img/thumbnails/LaMei/GT4_Sebring_thumb.jpg",
+        "mtime": 1759242061379
+      }
+    ]
+  },
+  {
     "album": "LadaCup",
     "images": [
       {
@@ -276,21 +291,6 @@
         "image": "/img/racingGallery/LadaCup/Lada-Drift.jpg",
         "thumbnail": "/img/thumbnails/LadaCup/Lada-Drift_thumb.jpg",
         "mtime": 1768857117492
-      }
-    ]
-  },
-  {
-    "album": "LaMei",
-    "images": [
-      {
-        "image": "/img/racingGallery/LaMei/GT4_Sebring_2.jpg",
-        "thumbnail": "/img/thumbnails/LaMei/GT4_Sebring_2_thumb.jpg",
-        "mtime": 1759242061397
-      },
-      {
-        "image": "/img/racingGallery/LaMei/GT4_Sebring.jpg",
-        "thumbnail": "/img/thumbnails/LaMei/GT4_Sebring_thumb.jpg",
-        "mtime": 1759242061379
       }
     ]
   },
