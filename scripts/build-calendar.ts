@@ -26,20 +26,42 @@ interface GalleryEntry {
   name: string;
   img: string;
   description: string;
+  mtime?: number;
 }
 
 function buildGallery(): void {
   const images = getFiles();
-  const gallery: GalleryEntry[] = images.map((img) => {
-    const base = img.replace(/\.(jpg|png)$/i, "");
-    return {
-      name: base,
-      img,
-      description: getDescription(base),
-    };
-  });
-  // Sortiere absteigend nach name
-  gallery.sort((a, b) => b.name.localeCompare(a.name));
+  const gallery: GalleryEntry[] = images
+    .map((img) => {
+      const base = img.replace(/\.(jpg|png)$/i, "");
+      const imgPath = path.join(imgFiles, img);
+      let mtime: number | undefined;
+      try {
+        const stat = fs.statSync(imgPath);
+        mtime = stat.mtime.getTime();
+      } catch {
+        mtime = undefined;
+      }
+      return {
+        name: base,
+        img: `/img/raceCalender/${img}`,
+        description: getDescription(base),
+        mtime,
+      };
+    })
+    // Sortiere absteigend nach mtime (neueste zuerst). Falls kein mtime vorhanden, fallback auf name.
+    .sort((a, b) => {
+      const am = a.mtime ?? 0;
+      const bm = b.mtime ?? 0;
+      if (bm !== am) return bm - am;
+      return b.name.localeCompare(a.name);
+    });
+
+  // Ensure output directory exists
+  const outDir = path.dirname(outFile);
+  if (!fs.existsSync(outDir)) {
+    fs.mkdirSync(outDir, { recursive: true });
+  }
   fs.writeFileSync(outFile, JSON.stringify(gallery, null, 2), "utf8");
 }
 
