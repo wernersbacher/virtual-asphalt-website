@@ -1,0 +1,62 @@
+[
+  {
+    "name": "018-ruscup",
+    "img": "/img/raceCalender/018-ruscup.png",
+    "description": "RusCup - Winter '25/'26",
+    "mtime": 1772176067518
+  },
+  {
+    "name": "019-bmwcup26",
+    "img": "/img/raceCalender/019-bmwcup26.jpg",
+    "description": "BMW Junior Cup - Spring '26 - BMW M235i Racing",
+    "mtime": 1772130065012
+  },
+  {
+    "name": "017-acEvo",
+    "img": "/img/raceCalender/017-acEvo.png",
+    "description": "AC EVO - Proof of Racing Championship - Winter 25/26",
+    "mtime": 1763851477423
+  },
+  {
+    "name": "016-rss3",
+    "img": "/img/raceCalender/016-rss3.jpg",
+    "description": "Campionato Monoposto - Autumn '25 - RSS Formula 3",
+    "mtime": 1759242060958
+  },
+  {
+    "name": "015-porsche25",
+    "img": "/img/raceCalender/015-porsche25.png",
+    "description": "Porsche Cup - Spring '25",
+    "mtime": 1759242060949
+  },
+  {
+    "name": "014-gtmasters_25",
+    "img": "/img/raceCalender/014-gtmasters_25.jpg",
+    "description": "vGT Masters Spring '25",
+    "mtime": 1759242060929
+  },
+  {
+    "name": "013-tcr2425",
+    "img": "/img/raceCalender/013-tcr2425.png",
+    "description": "vTCR - Winter '24/'25",
+    "mtime": 1759242060922
+  },
+  {
+    "name": "012-lmp3",
+    "img": "/img/raceCalender/012-lmp3.png",
+    "description": "Campionato Monoposto - Autumn '24 - LMP3",
+    "mtime": 1759242060918
+  },
+  {
+    "name": "011-flyer_SummerCup_24",
+    "img": "/img/raceCalender/011-flyer_SummerCup_24.jpg",
+    "description": "GT2 Summer Cup '24",
+    "mtime": 1759242060907
+  },
+  {
+    "name": "010-MX5-Cup_spring_24",
+    "img": "/img/raceCalender/010-MX5-Cup_spring_24.jpg",
+    "description": "MX5 Cup Spring '24",
+    "mtime": 1759242060902
+  }
+]
