@@ -3,10 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "npm run prebuild && vite --port 3000",
+    "dev": "npm run build:portfolio && vite --port 3000",
     "start": "vite --port 3000",
     "preview": "vite preview",
-    "prebuild": "node scripts/build-gallery.ts && node scripts/build-calendar.ts",
     "build:calendar": "node scripts/build-calendar.ts",
     "build:gallery": "node scripts/build-gallery.ts",
     "build:portfolio": "node scripts/build-gallery.ts && node scripts/build-calendar.ts",

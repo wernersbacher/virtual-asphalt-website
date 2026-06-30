@@ -10,8 +10,19 @@ const publicDir = path.join(__dirname, "public");
 const imgFiles = path.join(publicDir, "img", "raceCalender");
 const outFile = path.join(publicDir, "data", "calenderGallery.json");
 
+const existingGallery: GalleryEntry[] = fs.existsSync(outFile)
+  ? JSON.parse(fs.readFileSync(outFile, "utf8"))
+  : [];
+
+const existingMtimeByName = new Map<string, number>();
+for (const entry of existingGallery) {
+  if (entry.mtime) {
+    existingMtimeByName.set(entry.name, entry.mtime);
+  }
+}
+
 function getFiles(): string[] {
-  return fs.readdirSync(imgFiles).filter((f) => /\.(jpg|png)$/i.test(f));
+  return fs.readdirSync(imgFiles).filter((f) => /\.(jpg|png)$/i.test(f)).sort();
 }
 
 function getDescription(base: string): string {
@@ -35,12 +46,13 @@ function buildGallery(): void {
     .map((img) => {
       const base = img.replace(/\.(jpg|png)$/i, "");
       const imgPath = path.join(imgFiles, img);
+      const existingMtime = existingMtimeByName.get(base);
       let mtime: number | undefined;
       try {
         const stat = fs.statSync(imgPath);
-        mtime = stat.mtime.getTime();
+        mtime = existingMtime ?? stat.mtime.getTime();
       } catch {
-        mtime = undefined;
+        mtime = existingMtime;
       }
       return {
         name: base,
@@ -62,7 +74,11 @@ function buildGallery(): void {
   if (!fs.existsSync(outDir)) {
     fs.mkdirSync(outDir, { recursive: true });
   }
-  fs.writeFileSync(outFile, JSON.stringify(gallery, null, 2), "utf8");
+
+  const galleryJson = JSON.stringify(gallery, null, 2);
+  if (!fs.existsSync(outFile) || fs.readFileSync(outFile, "utf8") !== galleryJson) {
+    fs.writeFileSync(outFile, galleryJson, "utf8");
+  }
 }
 
 buildGallery();

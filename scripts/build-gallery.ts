@@ -18,11 +18,28 @@ async function main(): Promise<void> {
     fs.mkdirSync(PUBLIC_THUMB_ROOT, { recursive: true });
   }
 
+  const existingGallery = fs.existsSync(OUTPUT_JSON)
+    ? (JSON.parse(fs.readFileSync(OUTPUT_JSON, "utf8")) as Array<{
+        album: string;
+        images: Array<{ image: string; thumbnail: string; mtime: number }>;
+      }>)
+    : [];
+
+  const existingMtimeByImage = new Map<string, number>();
+  for (const album of existingGallery) {
+    for (const image of album.images) {
+      existingMtimeByImage.set(image.image, image.mtime);
+    }
+  }
+
   // Get all album directories
-  const albums = fs.readdirSync(GALLERY_DIR).filter((name) => {
-    const fullPath = path.join(GALLERY_DIR, name);
-    return fs.statSync(fullPath).isDirectory();
-  });
+  const albums = fs
+    .readdirSync(GALLERY_DIR)
+    .filter((name) => {
+      const fullPath = path.join(GALLERY_DIR, name);
+      return fs.statSync(fullPath).isDirectory();
+    })
+    .sort();
 
   const gallery: Array<{
     album: string;
@@ -38,12 +55,17 @@ async function main(): Promise<void> {
     const files = fs
       .readdirSync(albumDir)
       .filter((file) => /(jpg|jpeg|png)$/i.test(file));
-    // Sort files by mtime (newest first)
+    // Sort files by committed mtime when available, otherwise fallback to the current filesystem mtime.
     const filesSorted = files
       .map((file) => {
+        const relImg = `/img/racingGallery/${album}/${file}`;
         const imgPath = path.join(albumDir, file);
         const stat = fs.statSync(imgPath);
-        return { file, mtime: stat.mtime };
+        const existingMtime = existingMtimeByImage.get(relImg);
+        return {
+          file,
+          mtime: existingMtime ? new Date(existingMtime) : stat.mtime,
+        };
       })
       .sort((a, b) => b.mtime.getTime() - a.mtime.getTime())
       .map((entry) => entry.file);
@@ -54,14 +76,18 @@ async function main(): Promise<void> {
       const relImg = `/img/racingGallery/${album}/${file}`;
       const thumbName = `${file.replace(/\.(jpg|jpeg|png)$/i, "_thumb.jpg")}`;
       const thumbPath = path.join(thumbAlbumDir, thumbName);
-      await sharp(imgPath)
-        .resize({ width: THUMB_WIDTH })
-        .jpeg({ quality: 80 })
-        .toFile(thumbPath);
+
+      if (!fs.existsSync(thumbPath)) {
+        await sharp(imgPath)
+          .resize({ width: THUMB_WIDTH })
+          .jpeg({ quality: 80 })
+          .toFile(thumbPath);
+      }
+
       images.push({
         image: relImg,
         thumbnail: `/img/thumbnails/${album}/${thumbName}`,
-        mtime: stat.mtime.getTime(),
+        mtime: existingMtimeByImage.get(relImg) ?? stat.mtime.getTime(),
       });
     }
     gallery.push({ album, images });
@@ -72,7 +98,11 @@ async function main(): Promise<void> {
   if (!fs.existsSync(outputJsonDir)) {
     fs.mkdirSync(outputJsonDir, { recursive: true });
   }
-  fs.writeFileSync(OUTPUT_JSON, JSON.stringify(gallery, null, 2));
+
+  const galleryJson = JSON.stringify(gallery, null, 2);
+  if (!fs.existsSync(OUTPUT_JSON) || fs.readFileSync(OUTPUT_JSON, "utf8") !== galleryJson) {
+    fs.writeFileSync(OUTPUT_JSON, galleryJson);
+  }
 }
 
 main().catch((e) => {
