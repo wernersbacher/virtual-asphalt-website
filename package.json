@@ -9,6 +9,7 @@
     "prebuild": "node scripts/build-gallery.ts && node scripts/build-calendar.ts",
     "build:calendar": "node scripts/build-calendar.ts",
     "build:gallery": "node scripts/build-gallery.ts",
+    "build:portfolio": "node scripts/build-gallery.ts && node scripts/build-calendar.ts",
     "build": "vite build && tsc",
     "serve": "vite preview",
     "test": "vitest run",

@@ -13,6 +13,15 @@ type Album = {
   images: GalleryImage[];
 };
 
+function formatImageDate(mtime?: number) {
+  if (!mtime) return null;
+  return new Intl.DateTimeFormat(undefined, {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date(mtime));
+}
+
 const RacingPictureGallery: React.FC = () => {
   const [albums, setAlbums] = useState<Album[]>([]);
   const [albumFilter, setAlbumFilter] = useState<string>("All");
@@ -144,7 +153,7 @@ const RacingPictureGallery: React.FC = () => {
         {images.map((img, idx) => (
           <button
             key={img.thumbnail + idx}
-            className="focus:outline-none"
+            className="focus:outline-none cursor-pointer"
             onClick={() => setSelectedIdx(idx)}
           >
             <img
@@ -216,8 +225,13 @@ const RacingPictureGallery: React.FC = () => {
                 onLoad={() => setImgLoading(false)}
               />
             </div>
-            <div className="text-white text-center mt-2">
-              {selected.image.split("/").pop()}
+            <div className="text-white text-center mt-2 space-y-1">
+              <div>{selected.image.split("/").pop()}</div>
+              {selected.mtime ? (
+                <div className="text-sm text-gray-300">
+                  {formatImageDate(selected.mtime)}
+                </div>
+              ) : null}
             </div>
           </div>
         </div>
