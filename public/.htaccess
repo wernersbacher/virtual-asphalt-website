@@ -36,8 +36,4 @@
     Header set Expires "0"
   </FilesMatch>
 
-  # Allow long-term caching for image files since we use cache-busting query param
-  <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico)$">
-    Header set Cache-Control "public, max-age=31536000, immutable"
-  </FilesMatch>
 </IfModule>
