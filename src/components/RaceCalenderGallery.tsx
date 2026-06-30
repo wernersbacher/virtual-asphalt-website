@@ -15,7 +15,7 @@ export default function RaceCalendarGallery() {
     getGalleryList().then((data) => {
       if (!Array.isArray(data)) return setGallery([]);
       setGallery(
-        data.sort((a: any, b: any) => {
+        data.sort((a, b) => {
           const am = a.mtime ?? 0;
           const bm = b.mtime ?? 0;
           if (bm !== am) return bm - am;
