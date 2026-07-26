@@ -218,6 +218,11 @@
     "album": "In_Memoriam",
     "images": [
       {
+        "image": "/img/racingGallery/In_Memoriam/Memorial-Race-20-07-26.jpg",
+        "thumbnail": "/img/thumbnails/In_Memoriam/Memorial-Race-20-07-26_thumb.jpg",
+        "mtime": 1785080056981
+      },
+      {
         "image": "/img/racingGallery/In_Memoriam/Phillipp_Markus_Divebomb.jpg",
         "thumbnail": "/img/thumbnails/In_Memoriam/Phillipp_Markus_Divebomb_thumb.jpg",
         "mtime": 1759242061355
