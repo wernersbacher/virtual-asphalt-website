@@ -9,40 +9,20 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as RulesRouteImport } from './routes/rules'
-import { Route as RacingGalleryRouteImport } from './routes/racingGallery'
-import { Route as GetStartedRouteImport } from './routes/get-started'
-import { Route as FaqRouteImport } from './routes/faq'
-import { Route as EvoRouteImport } from './routes/evo'
-import { Route as ChampionshipsRouteImport } from './routes/championships'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as HowtoRecordTelemetryRouteImport } from './routes/howto/record-telemetry'
-import { Route as HowtoCreateTeamRouteImport } from './routes/howto/create-team'
+import { Route as ChampionshipsRouteImport } from './routes/championships'
+import { Route as EvoRouteImport } from './routes/evo'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as GetStartedRouteImport } from './routes/get-started'
+import { Route as RacingGalleryRouteImport } from './routes/racingGallery'
+import { Route as RulesRouteImport } from './routes/rules'
 import { Route as HowtoCreateSkinRouteImport } from './routes/howto/create-skin'
+import { Route as HowtoCreateTeamRouteImport } from './routes/howto/create-team'
+import { Route as HowtoRecordTelemetryRouteImport } from './routes/howto/record-telemetry'
 
-const RulesRoute = RulesRouteImport.update({
-  id: '/rules',
-  path: '/rules',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RacingGalleryRoute = RacingGalleryRouteImport.update({
-  id: '/racingGallery',
-  path: '/racingGallery',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GetStartedRoute = GetStartedRouteImport.update({
-  id: '/get-started',
-  path: '/get-started',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FaqRoute = FaqRouteImport.update({
-  id: '/faq',
-  path: '/faq',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EvoRoute = EvoRouteImport.update({
-  id: '/evo',
-  path: '/evo',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ChampionshipsRoute = ChampionshipsRouteImport.update({
@@ -50,14 +30,34 @@ const ChampionshipsRoute = ChampionshipsRouteImport.update({
   path: '/championships',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const EvoRoute = EvoRouteImport.update({
+  id: '/evo',
+  path: '/evo',
   getParentRoute: () => rootRouteImport,
 } as any)
-const HowtoRecordTelemetryRoute = HowtoRecordTelemetryRouteImport.update({
-  id: '/howto/record-telemetry',
-  path: '/howto/record-telemetry',
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GetStartedRoute = GetStartedRouteImport.update({
+  id: '/get-started',
+  path: '/get-started',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RacingGalleryRoute = RacingGalleryRouteImport.update({
+  id: '/racingGallery',
+  path: '/racingGallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RulesRoute = RulesRouteImport.update({
+  id: '/rules',
+  path: '/rules',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HowtoCreateSkinRoute = HowtoCreateSkinRouteImport.update({
+  id: '/howto/create-skin',
+  path: '/howto/create-skin',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HowtoCreateTeamRoute = HowtoCreateTeamRouteImport.update({
@@ -65,9 +65,9 @@ const HowtoCreateTeamRoute = HowtoCreateTeamRouteImport.update({
   path: '/howto/create-team',
   getParentRoute: () => rootRouteImport,
 } as any)
-const HowtoCreateSkinRoute = HowtoCreateSkinRouteImport.update({
-  id: '/howto/create-skin',
-  path: '/howto/create-skin',
+const HowtoRecordTelemetryRoute = HowtoRecordTelemetryRouteImport.update({
+  id: '/howto/record-telemetry',
+  path: '/howto/record-telemetry',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -162,39 +162,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/rules': {
-      id: '/rules'
-      path: '/rules'
-      fullPath: '/rules'
-      preLoaderRoute: typeof RulesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/racingGallery': {
-      id: '/racingGallery'
-      path: '/racingGallery'
-      fullPath: '/racingGallery'
-      preLoaderRoute: typeof RacingGalleryRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/get-started': {
-      id: '/get-started'
-      path: '/get-started'
-      fullPath: '/get-started'
-      preLoaderRoute: typeof GetStartedRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/faq': {
-      id: '/faq'
-      path: '/faq'
-      fullPath: '/faq'
-      preLoaderRoute: typeof FaqRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/evo': {
-      id: '/evo'
-      path: '/evo'
-      fullPath: '/evo'
-      preLoaderRoute: typeof EvoRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/championships': {
@@ -204,18 +176,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ChampionshipsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/evo': {
+      id: '/evo'
+      path: '/evo'
+      fullPath: '/evo'
+      preLoaderRoute: typeof EvoRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/howto/record-telemetry': {
-      id: '/howto/record-telemetry'
-      path: '/howto/record-telemetry'
-      fullPath: '/howto/record-telemetry'
-      preLoaderRoute: typeof HowtoRecordTelemetryRouteImport
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/get-started': {
+      id: '/get-started'
+      path: '/get-started'
+      fullPath: '/get-started'
+      preLoaderRoute: typeof GetStartedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/racingGallery': {
+      id: '/racingGallery'
+      path: '/racingGallery'
+      fullPath: '/racingGallery'
+      preLoaderRoute: typeof RacingGalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rules': {
+      id: '/rules'
+      path: '/rules'
+      fullPath: '/rules'
+      preLoaderRoute: typeof RulesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/howto/create-skin': {
+      id: '/howto/create-skin'
+      path: '/howto/create-skin'
+      fullPath: '/howto/create-skin'
+      preLoaderRoute: typeof HowtoCreateSkinRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/howto/create-team': {
@@ -225,11 +225,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HowtoCreateTeamRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/howto/create-skin': {
-      id: '/howto/create-skin'
-      path: '/howto/create-skin'
-      fullPath: '/howto/create-skin'
-      preLoaderRoute: typeof HowtoCreateSkinRouteImport
+    '/howto/record-telemetry': {
+      id: '/howto/record-telemetry'
+      path: '/howto/record-telemetry'
+      fullPath: '/howto/record-telemetry'
+      preLoaderRoute: typeof HowtoRecordTelemetryRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
