@@ -115,8 +115,43 @@
     ]
   },
   {
+    "album": "Ferrari_GT3",
+    "images": [
+      {
+        "image": "/img/racingGallery/Ferrari_GT3/roadamerica-closeup.jpg",
+        "thumbnail": "/img/thumbnails/Ferrari_GT3/roadamerica-closeup_thumb.jpg",
+        "mtime": 1791835630098
+      },
+      {
+        "image": "/img/racingGallery/Ferrari_GT3/roadamerica-start2.jpg",
+        "thumbnail": "/img/thumbnails/Ferrari_GT3/roadamerica-start2_thumb.jpg",
+        "mtime": 1791834921915
+      },
+      {
+        "image": "/img/racingGallery/Ferrari_GT3/roadamerica-fight.jpg",
+        "thumbnail": "/img/thumbnails/Ferrari_GT3/roadamerica-fight_thumb.jpg",
+        "mtime": 1791834544261
+      },
+      {
+        "image": "/img/racingGallery/Ferrari_GT3/roadamerica-start.jpg",
+        "thumbnail": "/img/thumbnails/Ferrari_GT3/roadamerica-start_thumb.jpg",
+        "mtime": 1791833962834
+      }
+    ]
+  },
+  {
     "album": "Fun_Races",
     "images": [
+      {
+        "image": "/img/racingGallery/Fun_Races/citroen-paris.jpg",
+        "thumbnail": "/img/thumbnails/Fun_Races/citroen-paris_thumb.jpg",
+        "mtime": 1791616658258
+      },
+      {
+        "image": "/img/racingGallery/Fun_Races/transit-jyllandsringen.jpg",
+        "thumbnail": "/img/thumbnails/Fun_Races/transit-jyllandsringen_thumb.jpg",
+        "mtime": 1787601135780
+      },
       {
         "image": "/img/racingGallery/Fun_Races/BTCC-Brno.jpg",
         "thumbnail": "/img/thumbnails/Fun_Races/BTCC-Brno_thumb.jpg",
