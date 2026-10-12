@@ -10,6 +10,8 @@ export const VimeoConsent: React.FC<VimeoConsentProps> = ({ src, title }) => {
   return (
     <div className="w-full max-w-2xl aspect-video rounded-lg overflow-hidden shadow-lg border border-border flex items-center justify-center bg-muted">
       {consent ? (
+        // Vimeo needs allow-scripts + allow-same-origin, so a sandbox would not restrict anything
+        // oxlint-disable-next-line react/iframe-missing-sandbox
         <iframe
           src={src}
           title={title}

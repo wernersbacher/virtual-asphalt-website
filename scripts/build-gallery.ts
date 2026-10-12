@@ -3,9 +3,9 @@ import path from "path";
 
 import sharp from "sharp";
 
-const __dirname = path.resolve();
+const rootDir = path.resolve();
 
-const publicDir = path.join(__dirname, "public");
+const publicDir = path.join(rootDir, "public");
 
 const GALLERY_DIR = path.join(publicDir, "img", "racingGallery");
 const PUBLIC_THUMB_ROOT = path.join(publicDir, "img", "thumbnails");
@@ -39,7 +39,7 @@ async function main(): Promise<void> {
       const fullPath = path.join(GALLERY_DIR, name);
       return fs.statSync(fullPath).isDirectory();
     })
-    .sort();
+    .toSorted();
 
   const gallery: Array<{
     album: string;
@@ -67,7 +67,7 @@ async function main(): Promise<void> {
           mtime: existingMtime ? new Date(existingMtime) : stat.mtime,
         };
       })
-      .sort((a, b) => b.mtime.getTime() - a.mtime.getTime())
+      .toSorted((a, b) => b.mtime.getTime() - a.mtime.getTime())
       .map((entry) => entry.file);
     const images = [];
     for (const file of filesSorted) {

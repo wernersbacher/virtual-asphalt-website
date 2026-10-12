@@ -17,7 +17,7 @@ export default function LatestRaceCalendarImage() {
     getGalleryList().then((data) => {
       if (Array.isArray(data) && data.length > 0) {
         // Sortiere nach Name absteigend und nimm das erste Element
-        const sorted = data.sort((a, b) => b.name.localeCompare(a.name));
+        const sorted = data.toSorted((a, b) => b.name.localeCompare(a.name));
         setLatest(sorted[0]);
       }
     });

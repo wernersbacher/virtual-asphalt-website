@@ -4,8 +4,8 @@
 import fs from "fs";
 import path from "path";
 
-const __dirname = path.resolve();
-const publicDir = path.join(__dirname, "public");
+const rootDir = path.resolve();
+const publicDir = path.join(rootDir, "public");
 
 const imgFiles = path.join(publicDir, "img", "raceCalender");
 const outFile = path.join(publicDir, "data", "calenderGallery.json");
@@ -22,7 +22,7 @@ for (const entry of existingGallery) {
 }
 
 function getFiles(): string[] {
-  return fs.readdirSync(imgFiles).filter((f) => /\.(jpg|png)$/i.test(f)).sort();
+  return fs.readdirSync(imgFiles).filter((f) => /\.(jpg|png)$/i.test(f)).toSorted();
 }
 
 function getDescription(base: string): string {
@@ -62,7 +62,7 @@ function buildGallery(): void {
       };
     })
     // Sortiere absteigend nach mtime (neueste zuerst). Falls kein mtime vorhanden, fallback auf name.
-    .sort((a, b) => {
+    .toSorted((a, b) => {
       const am = a.mtime ?? 0;
       const bm = b.mtime ?? 0;
       if (bm !== am) return bm - am;

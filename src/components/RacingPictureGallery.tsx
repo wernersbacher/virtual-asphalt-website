@@ -45,7 +45,7 @@ const RacingPictureGallery: React.FC = () => {
       albums
         .filter((a) => albumFilter === "All" || a.album === albumFilter)
         .flatMap((a) => a.images.map((img) => ({ ...img, album: a.album })))
-        .sort((a, b) => (b.mtime ?? 0) - (a.mtime ?? 0)),
+        .toSorted((a, b) => (b.mtime ?? 0) - (a.mtime ?? 0)),
     [albums, albumFilter]
   );
 

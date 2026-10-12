@@ -1,42 +1,35 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": [],
+  "plugins": ["typescript", "react", "import", "unicorn", "oxc"],
   "categories": {
-    "correctness": "off"
+    "correctness": "error",
+    "suspicious": "warn"
   },
   "env": {
-    "builtin": true
+    "builtin": true,
+    "es2024": true,
+    "browser": true
   },
-  "ignorePatterns": [
-    "dist"
-  ],
+  "ignorePatterns": ["dist", "src/routeTree.gen.ts"],
+  "rules": {
+    "react/rules-of-hooks": "error",
+    "react/exhaustive-deps": "warn",
+    "react/jsx-key": "error",
+    "react/react-in-jsx-scope": "off",
+    "import/no-cycle": "error",
+    "import/no-duplicates": "error",
+    "import/first": "error",
+    "import/no-unassigned-import": ["warn", { "allow": ["**/*.css"] }],
+    "typescript/no-explicit-any": "error",
+    "typescript/no-non-null-assertion": "warn",
+    "eqeqeq": "error",
+    "no-var": "error",
+    "prefer-const": "error"
+  },
   "overrides": [
     {
-      "files": [
-        "**/*.{ts,tsx}"
-      ],
-      "rules": {},
-      "plugins": [
-        "typescript",
-        "react",
-        "import",
-        "unicorn"
-      ],
-      "env": {
-        "es2018": true,
-        "es2024": true,
-        "browser": true,
-        "vitest": true
-      },
-      "globals": {
-        "AudioWorkletGlobalScope": "readonly",
-        "AudioWorkletProcessor": "readonly",
-        "currentFrame": "readonly",
-        "currentTime": "readonly",
-        "registerProcessor": "readonly",
-        "sampleRate": "readonly",
-        "WorkletGlobalScope": "readonly"
-      }
+      "files": ["scripts/**", "*.config.{js,ts}"],
+      "env": { "node": true }
     }
   ]
 }
