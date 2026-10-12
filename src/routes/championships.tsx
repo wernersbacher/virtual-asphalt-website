@@ -7,7 +7,7 @@ export const Route = createFileRoute("/championships")({
   component: Championships,
 });
 
-export default function Championships() {
+function Championships() {
   return (
     <>
       <h1 className="text-4xl font-extrabold mb-2 tracking-tight text-center drop-shadow-lg">

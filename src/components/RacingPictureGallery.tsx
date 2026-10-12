@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useMemo, useRef } from "react";
 
 import { Button } from "./ui/button";
 
@@ -25,47 +25,34 @@ function formatImageDate(mtime?: number) {
 const RacingPictureGallery: React.FC = () => {
   const [albums, setAlbums] = useState<Album[]>([]);
   const [albumFilter, setAlbumFilter] = useState<string>("All");
-  const [images, setImages] = useState<GalleryImage[]>([]);
   const [selectedIdx, setSelectedIdx] = useState<number | null>(null);
   const modalRef = useRef<HTMLDivElement>(null);
   const touchStartX = useRef<number | null>(null);
   const touchEndX = useRef<number | null>(null);
-  const [imgLoading, setImgLoading] = useState(false);
-  const prevIdxRef = useRef<number | null>(null);
+  // Source of the last fully loaded fullscreen image
+  const [loadedSrc, setLoadedSrc] = useState<string | null>(null);
 
   // Load gallery.json on mount
   useEffect(() => {
     fetch("/data/racingGallery.json")
       .then((res) => res.json())
-      .then((data: Album[]) => {
-        setAlbums(data);
-        // For 'All', sort by mtime descending
-        const allImages = data
-          .flatMap((a) => a.images.map((img) => ({ ...img, album: a.album })))
-          .sort((a, b) => (b.mtime ?? 0) - (a.mtime ?? 0));
-        setImages(allImages);
-      });
+      .then((data: Album[]) => setAlbums(data));
   }, []);
 
-  // Update images when albumFilter changes
-  useEffect(() => {
-    if (albumFilter === "All") {
-      const allImages = albums
+  // Images of the selected album (or all albums), sorted by mtime descending
+  const images = useMemo<GalleryImage[]>(
+    () =>
+      albums
+        .filter((a) => albumFilter === "All" || a.album === albumFilter)
         .flatMap((a) => a.images.map((img) => ({ ...img, album: a.album })))
-        .sort((a, b) => (b.mtime ?? 0) - (a.mtime ?? 0));
-      setImages(allImages);
-    } else {
-      const album = albums.find((a) => a.album === albumFilter);
-      setImages(
-        album
-          ? album.images
-              .map((img) => ({ ...img, album: album.album }))
-              .sort((a, b) => (b.mtime ?? 0) - (a.mtime ?? 0))
-          : []
-      );
-    }
+        .sort((a, b) => (b.mtime ?? 0) - (a.mtime ?? 0)),
+    [albums, albumFilter]
+  );
+
+  const selectAlbum = (album: string) => {
+    setAlbumFilter(album);
     setSelectedIdx(null);
-  }, [albumFilter, albums]);
+  };
 
   // Keyboard navigation and ESC close
   useEffect(() => {
@@ -110,28 +97,9 @@ const RacingPictureGallery: React.FC = () => {
     };
   }, [selectedIdx, images.length]);
 
-  useEffect(() => {
-    if (selectedIdx !== null && prevIdxRef.current !== selectedIdx) {
-      setImgLoading(true);
-      prevIdxRef.current = selectedIdx;
-    }
-  }, [selectedIdx]);
-
   const albumNames = ["All", ...albums.map((a) => a.album)];
   const selected = selectedIdx !== null ? images[selectedIdx] : null;
-
-  // Set loading state when selectedIdx changes
-  useEffect(() => {
-    if (selectedIdx !== null && prevIdxRef.current !== selectedIdx) {
-      setImgLoading(true);
-      prevIdxRef.current = selectedIdx;
-    }
-  }, [selectedIdx]);
-
-  // Reset selection if filter changes
-  useEffect(() => {
-    setSelectedIdx(null);
-  }, [albumFilter]);
+  const imgLoading = selected !== null && loadedSrc !== selected.image;
 
   return (
     <div>
@@ -142,7 +110,7 @@ const RacingPictureGallery: React.FC = () => {
             className="cursor-pointer"
             key={album}
             variant={albumFilter === album ? "default" : "ghost"}
-            onClick={() => setAlbumFilter(album)}
+            onClick={() => selectAlbum(album)}
           >
             {album.replace(/_/g, " ")}
           </Button>
@@ -169,7 +137,7 @@ const RacingPictureGallery: React.FC = () => {
       {selected && (
         <div
           ref={modalRef}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80"
           onClick={() => setSelectedIdx(null)}
         >
           <div
@@ -177,7 +145,7 @@ const RacingPictureGallery: React.FC = () => {
             onClick={(e) => e.stopPropagation()}
           >
             <button
-              className="absolute top-2 right-2 text-white text-2xl bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-80 cursor-pointer"
+              className="absolute top-2 right-2 text-white text-2xl bg-black/50 rounded-full p-2 hover:bg-black/80 cursor-pointer"
               onClick={() => setSelectedIdx(null)}
               aria-label="Close"
             >
@@ -186,7 +154,7 @@ const RacingPictureGallery: React.FC = () => {
             {/* Prev/Next arrows for desktop */}
             {selectedIdx !== null && selectedIdx > 0 && (
               <button
-                className="absolute left-2 top-1/2 -translate-y-1/2 text-white text-3xl bg-black bg-opacity-40 rounded-full p-2 hover:bg-opacity-80 cursor-pointer"
+                className="absolute left-2 top-1/2 -translate-y-1/2 text-white text-3xl bg-black/40 rounded-full p-2 hover:bg-black/80 cursor-pointer"
                 onClick={() =>
                   setSelectedIdx(selectedIdx !== null ? selectedIdx - 1 : 0)
                 }
@@ -197,7 +165,7 @@ const RacingPictureGallery: React.FC = () => {
             )}
             {selectedIdx !== null && selectedIdx < images.length - 1 && (
               <button
-                className="absolute right-10 top-1/2 -translate-y-1/2 text-white text-3xl bg-black bg-opacity-40 rounded-full p-2 hover:bg-opacity-80 cursor-pointer"
+                className="absolute right-10 top-1/2 -translate-y-1/2 text-white text-3xl bg-black/40 rounded-full p-2 hover:bg-black/80 cursor-pointer"
                 onClick={() =>
                   setSelectedIdx(selectedIdx !== null ? selectedIdx + 1 : 0)
                 }
@@ -222,7 +190,7 @@ const RacingPictureGallery: React.FC = () => {
                 alt="Großansicht"
                 className={`w-full h-auto max-h-[80vh] object-contain rounded shadow-lg select-none ${imgLoading ? "hidden" : ""}`}
                 draggable={false}
-                onLoad={() => setImgLoading(false)}
+                onLoad={() => setLoadedSrc(selected.image)}
               />
             </div>
             <div className="text-white text-center mt-2 space-y-1">

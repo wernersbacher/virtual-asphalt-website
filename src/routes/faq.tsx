@@ -7,7 +7,7 @@ import {
   AccordionTrigger,
 } from '../components/ui/accordion';
 
-export default function FAQ() {
+function FAQ() {
   return (
     <>
       <h1 className="text-4xl font-extrabold mb-2 tracking-tight text-center drop-shadow-lg">

@@ -7,7 +7,7 @@ export const Route = createFileRoute("/get-started")({
   component: GetStarted,
 });
 
-export default function GetStarted() {
+function GetStarted() {
   return (
     <>
       <h1 className="text-4xl font-extrabold mb-2 tracking-tight text-center drop-shadow-lg">

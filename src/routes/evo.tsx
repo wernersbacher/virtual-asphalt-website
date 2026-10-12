@@ -8,7 +8,7 @@ export const Route = createFileRoute("/evo")({
   component: Evo,
 });
 
-export default function Evo() {
+function Evo() {
   return (
     <>
       <div className="mb-2">

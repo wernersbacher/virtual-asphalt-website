@@ -3,7 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { InfoBlock } from "../../components/InfoBlock";
 import { InlineExternalLink } from "../../components/Link";
 
-export default function HowToRecordTelemetry() {
+function HowToRecordTelemetry() {
   return (
     <>
       <h1 className="text-4xl font-extrabold mb-2 tracking-tight text-center drop-shadow-lg">
