@@ -40,6 +40,13 @@ function HomePage() {
           Current Championships
         </Link>
         <Link
+          to="/championships"
+          hash="standings"
+          className="px-4 py-2 bg-amber-600 text-white rounded shadow hover:bg-amber-700 transition"
+        >
+          Standings
+        </Link>
+        <Link
           to="/racingGallery"
           className="px-4 py-2 bg-purple-600 text-white rounded shadow hover:bg-purple-700 transition"
         >
@@ -80,11 +87,7 @@ function HomePage() {
       <InfoBlock color="gray" className="text-center">
         <p>
           We have <span className="font-bold">3 servers online</span>. Find out
-          which one you need to join in{" "}
-          <InlineExternalLink href="https://acswui.virtual-asphalt.org/">
-            ACSwui
-          </InlineExternalLink>
-          .
+          which one you need to join in our Discord.
         </p>
       </InfoBlock>
     </>

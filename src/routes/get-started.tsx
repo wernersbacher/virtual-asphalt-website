@@ -49,28 +49,14 @@ function GetStarted() {
           </li>
           <li>
             Install required content for the race or championship (cars and
-            track). Download links for the specific event are available in{" "}
-            <InlineExternalLink href="https://acswui.virtual-asphalt.org/">
-              ACSwui
-            </InlineExternalLink>
-            .
+            track). Download links for the specific event are available in
+            our Discord.
           </li>
           <li>
-            Drive one valid lap on one of our race servers (Search for
-            virtual-asphalt or click the join links in{" "}
-            <InlineExternalLink href="https://acswui.virtual-asphalt.org/">
-              ACSwui
-            </InlineExternalLink>
-            ). Password:
+            Drive one valid lap on one of our race servers (search for
+            virtual-asphalt in the server list or use the join links in our
+            Discord). Password:
             <span className="font-semibold">vARacing</span>
-          </li>
-          <li>
-            Log in to our race management system{" "}
-            <InlineExternalLink href="https://acswui.virtual-asphalt.org/">
-              ACSwui
-            </InlineExternalLink>
-            , then register for the championship or a race and pick any
-            available skin.
           </li>
         </ol>
       </InfoBlock>

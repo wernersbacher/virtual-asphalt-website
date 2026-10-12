@@ -13,7 +13,7 @@ const menuItems: Array<NavMenuItem> = [
   { to: "/", label: "Home" },
   { to: "/get-started", label: "Get Started" },
   //{ to: "/evo", label: "AC Evo" },
-  { to: "/championships", label: "Races" },
+  { to: "/championships", label: "Championships" },
   { to: "/racingGallery", label: "Gallery" },
   { to: "/rules", label: "Reglement" },
   { to: "/faq", label: "FAQ" },
@@ -21,14 +21,7 @@ const menuItems: Array<NavMenuItem> = [
     label: "Howto",
     children: [
       { to: "/howto/record-telemetry", label: "Record Telemetry" },
-      { to: "/howto/create-skin", label: "Create Skin" },
-      { to: "/howto/create-team", label: "Create Team" },
     ],
-  },
-  {
-    to: "https://acswui.virtual-asphalt.org/",
-    label: "ACSwui",
-    external: true,
   },
 ];
 

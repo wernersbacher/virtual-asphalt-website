@@ -24,26 +24,8 @@ function FAQ() {
               Where can I see the next races?
             </AccordionTrigger>
             <AccordionContent>
-              You can see them directly on the startpage on ACSwui.
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="q2">
-            <AccordionTrigger className="text-lg font-semibold">
-              Where can I see the racing series?
-            </AccordionTrigger>
-            <AccordionContent>
-              Just click on the race series logo on the startpage on ACSwui. To
-              see all existing series, go to Sessions ➡️ Race Series
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="q3">
-            <AccordionTrigger className="text-lg font-semibold">
-              Where can I see the qualifying times after a race?
-            </AccordionTrigger>
-            <AccordionContent>
-              The list of seasons can be found at the end of the overview page
-              of a racing series. Click on the relevant race event to display
-              the qualifying times.
+              You can find all upcoming races on the Races page and in our
+              Discord.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="q4">

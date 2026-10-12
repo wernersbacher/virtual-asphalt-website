@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import { InlineExternalLink } from "../components/Link";
+import { ChampionshipStandings } from "../components/ChampionshipStandings";
 import RaceCalendarGallery from "../components/RaceCalenderGallery";
+import { ferrariGt3Challenge } from "../content/championships";
 
 export const Route = createFileRoute("/championships")({
   component: Championships,
@@ -16,12 +17,11 @@ function Championships() {
       <p className="text-lg leading-relaxed">
         Here you can find the current race calendar with all planned events and
         their details. Fun races are not listed here, but you can find them (and
-        the championship races) listed in{" "}
-        <InlineExternalLink href="https://acswui.virtual-asphalt.org/">
-          ACSwui
-        </InlineExternalLink>
-        .
+        the championship races) announced in our Discord.
       </p>
+      <section id="standings" className="scroll-mt-4">
+        <ChampionshipStandings config={ferrariGt3Challenge} />
+      </section>
       <RaceCalendarGallery />
     </>
   );

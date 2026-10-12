@@ -28,9 +28,7 @@ export const rulesContent: Array<RuleSection> = [
             </p>
             <p>
               The communication of the community takes place within{' '}
-              <span className="font-semibold">Discord</span>.<br />
-              We use <span className="font-semibold">ACswui</span> for the
-              organisation of races.
+              <span className="font-semibold">Discord</span>.
             </p>
           </>
         ),
@@ -64,12 +62,6 @@ export const rulesContent: Array<RuleSection> = [
                 <span className="font-semibold">Variety:</span> We run both
                 championships and open races. Everyone in the community has a
                 say in the choice of vehicle and route.
-              </li>
-              <li>
-                <span className="font-semibold">ACswui:</span> We use the ACswui
-                system to plan and organise training and racing operations. As
-                the main developer is also a vA member, we provide suggestions
-                for further development.
               </li>
             </ul>
             <p>
@@ -395,9 +387,10 @@ export const rulesContent: Array<RuleSection> = [
     title: 'Championships',
     content: (
       <p>
-        In championships, points are usually counted using the ACswui system. If
-        drivers have the same points in the final table, the best positions
-        (most first places, most second places, etc.) count.
+        In championships, points are counted according to the points system of
+        the respective championship. If drivers have the same points in the
+        final table, the best positions (most first places, most second places,
+        etc.) count.
       </p>
     ),
   },
