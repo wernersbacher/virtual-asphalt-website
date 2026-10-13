@@ -106,7 +106,11 @@ const RacingPictureGallery: React.FC = () => {
     };
   }, [selectedIdx, images.length]);
 
-  const albumNames = ["All", ...albums.map((a) => a.album)];
+  // Albums sorted by their most recent image, newest first
+  const albumNames = useMemo(() => {
+    const latest = (a: Album) => Math.max(0, ...a.images.map((img) => img.mtime ?? 0));
+    return ["All", ...albums.toSorted((a, b) => latest(b) - latest(a)).map((a) => a.album)];
+  }, [albums]);
   const selected = selectedIdx !== null ? images[selectedIdx] : null;
   const selectedSrc = selected ? (selected.large ?? selected.image) : null;
   const imgLoading = selected !== null && loadedSrc !== selectedSrc;
