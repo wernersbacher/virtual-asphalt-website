@@ -2,66 +2,77 @@
   {
     "name": "020-ferrari-challenge-2026",
     "img": "/img/raceCalender/020-ferrari-challenge-2026.png",
+    "web": "/img/large/raceCalender/020-ferrari-challenge-2026.webp",
     "description": "Ferrari Challenge - Autumn '26 - Ferrari 488 GT3",
     "mtime": 1786359400275
   },
   {
     "name": "018-ruscup",
     "img": "/img/raceCalender/018-ruscup.png",
+    "web": "/img/large/raceCalender/018-ruscup.webp",
     "description": "RusCup - Winter '25/'26",
     "mtime": 1772176067518
   },
   {
     "name": "019-bmwcup26",
     "img": "/img/raceCalender/019-bmwcup26.jpg",
+    "web": "/img/large/raceCalender/019-bmwcup26.webp",
     "description": "BMW Junior Cup - Spring '26 - BMW M235i Racing",
     "mtime": 1772130065012
   },
   {
     "name": "017-acEvo",
     "img": "/img/raceCalender/017-acEvo.png",
+    "web": "/img/large/raceCalender/017-acEvo.webp",
     "description": "AC EVO - Proof of Racing Championship - Winter 25/26",
     "mtime": 1763851477423
   },
   {
     "name": "016-rss3",
     "img": "/img/raceCalender/016-rss3.jpg",
+    "web": "/img/large/raceCalender/016-rss3.webp",
     "description": "Campionato Monoposto - Autumn '25 - RSS Formula 3",
     "mtime": 1759242060958
   },
   {
     "name": "015-porsche25",
     "img": "/img/raceCalender/015-porsche25.png",
+    "web": "/img/large/raceCalender/015-porsche25.webp",
     "description": "Porsche Cup - Spring '25",
     "mtime": 1759242060949
   },
   {
     "name": "014-gtmasters_25",
     "img": "/img/raceCalender/014-gtmasters_25.jpg",
+    "web": "/img/large/raceCalender/014-gtmasters_25.webp",
     "description": "vGT Masters Spring '25",
     "mtime": 1759242060929
   },
   {
     "name": "013-tcr2425",
     "img": "/img/raceCalender/013-tcr2425.png",
+    "web": "/img/large/raceCalender/013-tcr2425.webp",
     "description": "vTCR - Winter '24/'25",
     "mtime": 1759242060922
   },
   {
     "name": "012-lmp3",
     "img": "/img/raceCalender/012-lmp3.png",
+    "web": "/img/large/raceCalender/012-lmp3.webp",
     "description": "Campionato Monoposto - Autumn '24 - LMP3",
     "mtime": 1759242060918
   },
   {
     "name": "011-flyer_SummerCup_24",
     "img": "/img/raceCalender/011-flyer_SummerCup_24.jpg",
+    "web": "/img/large/raceCalender/011-flyer_SummerCup_24.webp",
     "description": "GT2 Summer Cup '24",
     "mtime": 1759242060907
   },
   {
     "name": "010-MX5-Cup_spring_24",
     "img": "/img/raceCalender/010-MX5-Cup_spring_24.jpg",
+    "web": "/img/large/raceCalender/010-MX5-Cup_spring_24.webp",
     "description": "MX5 Cup Spring '24",
     "mtime": 1759242060902
   }

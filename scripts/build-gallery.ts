@@ -9,9 +9,14 @@ const publicDir = path.join(rootDir, "public");
 
 const GALLERY_DIR = path.join(publicDir, "img", "racingGallery");
 const PUBLIC_THUMB_ROOT = path.join(publicDir, "img", "thumbnails");
+// Web-optimized variants for the lightbox; the originals are often 5k screenshots with 5-9 MB
+const PUBLIC_LARGE_ROOT = path.join(publicDir, "img", "large", "racingGallery");
 const OUTPUT_JSON = path.join(publicDir, "data", "racingGallery.json");
 
 const THUMB_WIDTH = 400;
+const LARGE_WIDTH = 1920;
+
+type GalleryImage = { image: string; thumbnail: string; large: string; mtime: number };
 
 async function main(): Promise<void> {
   if (!fs.existsSync(PUBLIC_THUMB_ROOT)) {
@@ -21,7 +26,7 @@ async function main(): Promise<void> {
   const existingGallery = fs.existsSync(OUTPUT_JSON)
     ? (JSON.parse(fs.readFileSync(OUTPUT_JSON, "utf8")) as Array<{
         album: string;
-        images: Array<{ image: string; thumbnail: string; mtime: number }>;
+        images: Array<GalleryImage>;
       }>)
     : [];
 
@@ -41,17 +46,14 @@ async function main(): Promise<void> {
     })
     .toSorted();
 
-  const gallery: Array<{
-    album: string;
-    images: Array<{ image: string; thumbnail: string; mtime: number }>;
-  }> = [];
+  const gallery: Array<{ album: string; images: Array<GalleryImage> }> = [];
 
   for (const album of albums) {
     const albumDir = path.join(GALLERY_DIR, album);
     const thumbAlbumDir = path.join(PUBLIC_THUMB_ROOT, album);
-    if (!fs.existsSync(thumbAlbumDir)) {
-      fs.mkdirSync(thumbAlbumDir, { recursive: true });
-    }
+    const largeAlbumDir = path.join(PUBLIC_LARGE_ROOT, album);
+    fs.mkdirSync(thumbAlbumDir, { recursive: true });
+    fs.mkdirSync(largeAlbumDir, { recursive: true });
     const files = fs
       .readdirSync(albumDir)
       .filter((file) => /(jpg|jpeg|png)$/i.test(file));
@@ -69,7 +71,7 @@ async function main(): Promise<void> {
       })
       .toSorted((a, b) => b.mtime.getTime() - a.mtime.getTime())
       .map((entry) => entry.file);
-    const images = [];
+    const images: Array<GalleryImage> = [];
     for (const file of filesSorted) {
       const imgPath = path.join(albumDir, file);
       const stat = fs.statSync(imgPath);
@@ -84,9 +86,19 @@ async function main(): Promise<void> {
           .toFile(thumbPath);
       }
 
+      const largeName = file.replace(/\.(jpg|jpeg|png)$/i, ".webp");
+      const largePath = path.join(largeAlbumDir, largeName);
+      if (!fs.existsSync(largePath)) {
+        await sharp(imgPath)
+          .resize({ width: LARGE_WIDTH, withoutEnlargement: true })
+          .webp({ quality: 80 })
+          .toFile(largePath);
+      }
+
       images.push({
         image: relImg,
         thumbnail: `/img/thumbnails/${album}/${thumbName}`,
+        large: `/img/large/racingGallery/${album}/${largeName}`,
         mtime: existingMtimeByImage.get(relImg) ?? stat.mtime.getTime(),
       });
     }

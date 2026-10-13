@@ -10,6 +10,7 @@ export default function LatestRaceCalendarImage() {
   const [latest, setLatest] = useState<{
     name: string;
     img: string;
+    web?: string;
     description: string;
   } | null>(null);
 
@@ -28,8 +29,8 @@ export default function LatestRaceCalendarImage() {
   return (
     <div className="flex flex-col items-center gap-2">
       <img
-        src={latest.img}
-        alt={latest.name}
+        src={latest.web ?? latest.img}
+        alt={latest.description || latest.name}
         className="w-full max-w-md mx-auto h-auto object-contain rounded shadow"
       />
       <div className="p-2 w-full mx-auto text-center">

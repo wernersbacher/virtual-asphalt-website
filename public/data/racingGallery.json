@@ -5,6 +5,7 @@
       {
         "image": "/img/racingGallery/ACE_S1/evo-m4-rbr.png",
         "thumbnail": "/img/thumbnails/ACE_S1/evo-m4-rbr_thumb.jpg",
+        "large": "/img/large/racingGallery/ACE_S1/evo-m4-rbr.webp",
         "mtime": 1771277590810
       }
     ]
@@ -15,36 +16,43 @@
       {
         "image": "/img/racingGallery/BMW26/bmw-limerockpark1.jpg",
         "thumbnail": "/img/thumbnails/BMW26/bmw-limerockpark1_thumb.jpg",
+        "large": "/img/large/racingGallery/BMW26/bmw-limerockpark1.webp",
         "mtime": 1782763601921
       },
       {
         "image": "/img/racingGallery/BMW26/bmw-oschersleben2.jpg",
         "thumbnail": "/img/thumbnails/BMW26/bmw-oschersleben2_thumb.jpg",
+        "large": "/img/large/racingGallery/BMW26/bmw-oschersleben2.webp",
         "mtime": 1781553068550
       },
       {
         "image": "/img/racingGallery/BMW26/bmw-oschersleben1.jpg",
         "thumbnail": "/img/thumbnails/BMW26/bmw-oschersleben1_thumb.jpg",
+        "large": "/img/large/racingGallery/BMW26/bmw-oschersleben1.webp",
         "mtime": 1781552503225
       },
       {
         "image": "/img/racingGallery/BMW26/bmw-theux.jpg",
         "thumbnail": "/img/thumbnails/BMW26/bmw-theux_thumb.jpg",
+        "large": "/img/large/racingGallery/BMW26/bmw-theux.webp",
         "mtime": 1779133993839
       },
       {
         "image": "/img/racingGallery/BMW26/bmw-zolder1.jpg",
         "thumbnail": "/img/thumbnails/BMW26/bmw-zolder1_thumb.jpg",
+        "large": "/img/large/racingGallery/BMW26/bmw-zolder1.webp",
         "mtime": 1777923585578
       },
       {
         "image": "/img/racingGallery/BMW26/bmw-hockenheim2.jpg",
         "thumbnail": "/img/thumbnails/BMW26/bmw-hockenheim2_thumb.jpg",
+        "large": "/img/large/racingGallery/BMW26/bmw-hockenheim2.webp",
         "mtime": 1776715930263
       },
       {
         "image": "/img/racingGallery/BMW26/bmw-hockenheim1.jpg",
         "thumbnail": "/img/thumbnails/BMW26/bmw-hockenheim1_thumb.jpg",
+        "large": "/img/large/racingGallery/BMW26/bmw-hockenheim1.webp",
         "mtime": 1776715799702
       }
     ]
@@ -55,61 +63,73 @@
       {
         "image": "/img/racingGallery/F3/F3-Singapore.jpg",
         "thumbnail": "/img/thumbnails/F3/F3-Singapore_thumb.jpg",
+        "large": "/img/large/racingGallery/F3/F3-Singapore.webp",
         "mtime": 1764018085403
       },
       {
         "image": "/img/racingGallery/F3/f3-heartlake-WERvsBAJ.jpg",
         "thumbnail": "/img/thumbnails/F3/f3-heartlake-WERvsBAJ_thumb.jpg",
+        "large": "/img/large/racingGallery/F3/f3-heartlake-WERvsBAJ.webp",
         "mtime": 1763851477443
       },
       {
         "image": "/img/racingGallery/F3/F3-suzuka1.jpg",
         "thumbnail": "/img/thumbnails/F3/F3-suzuka1_thumb.jpg",
+        "large": "/img/large/racingGallery/F3/F3-suzuka1.webp",
         "mtime": 1760507955999
       },
       {
         "image": "/img/racingGallery/F3/f3-suzuka2-flying.jpg",
         "thumbnail": "/img/thumbnails/F3/f3-suzuka2-flying_thumb.jpg",
+        "large": "/img/large/racingGallery/F3/f3-suzuka2-flying.webp",
         "mtime": 1760386392905
       },
       {
         "image": "/img/racingGallery/F3/f3-redbullring1.jpg",
         "thumbnail": "/img/thumbnails/F3/f3-redbullring1_thumb.jpg",
+        "large": "/img/large/racingGallery/F3/f3-redbullring1.webp",
         "mtime": 1759242109040
       },
       {
         "image": "/img/racingGallery/F3/f3_photofinish.jpg",
         "thumbnail": "/img/thumbnails/F3/f3_photofinish_thumb.jpg",
+        "large": "/img/large/racingGallery/F3/f3_photofinish.webp",
         "mtime": 1759242061040
       },
       {
         "image": "/img/racingGallery/F3/F3-Interlagos2.jpg",
         "thumbnail": "/img/thumbnails/F3/F3-Interlagos2_thumb.jpg",
+        "large": "/img/large/racingGallery/F3/F3-Interlagos2.webp",
         "mtime": 1759242061039
       },
       {
         "image": "/img/racingGallery/F3/F3-Interlagos1.jpg",
         "thumbnail": "/img/thumbnails/F3/F3-Interlagos1_thumb.jpg",
+        "large": "/img/large/racingGallery/F3/F3-Interlagos1.webp",
         "mtime": 1759242061020
       },
       {
         "image": "/img/racingGallery/F3/F3-Interlagos-Photofinish.jpg",
         "thumbnail": "/img/thumbnails/F3/F3-Interlagos-Photofinish_thumb.jpg",
+        "large": "/img/large/racingGallery/F3/F3-Interlagos-Photofinish.webp",
         "mtime": 1759242060998
       },
       {
         "image": "/img/racingGallery/F3/F3-Interlagos-3.jpg",
         "thumbnail": "/img/thumbnails/F3/F3-Interlagos-3_thumb.jpg",
+        "large": "/img/large/racingGallery/F3/F3-Interlagos-3.webp",
         "mtime": 1759242060978
       },
       {
         "image": "/img/racingGallery/F3/Screenshot_rss_formula_rss_3_v6_ks_red_bull_ring_29-8-125-22-17-59.jpg",
         "thumbnail": "/img/thumbnails/F3/Screenshot_rss_formula_rss_3_v6_ks_red_bull_ring_29-8-125-22-17-59_thumb.jpg",
+        "large": "/img/large/racingGallery/F3/Screenshot_rss_formula_rss_3_v6_ks_red_bull_ring_29-8-125-22-17-59.webp",
         "mtime": 1759177079707
       },
       {
         "image": "/img/racingGallery/F3/f3-redbullring3.jpg",
         "thumbnail": "/img/thumbnails/F3/f3-redbullring3_thumb.jpg",
+        "large": "/img/large/racingGallery/F3/f3-redbullring3.webp",
         "mtime": 1759176808418
       }
     ]
@@ -120,21 +140,25 @@
       {
         "image": "/img/racingGallery/Ferrari_GT3/roadamerica-closeup.jpg",
         "thumbnail": "/img/thumbnails/Ferrari_GT3/roadamerica-closeup_thumb.jpg",
+        "large": "/img/large/racingGallery/Ferrari_GT3/roadamerica-closeup.webp",
         "mtime": 1791835630098
       },
       {
         "image": "/img/racingGallery/Ferrari_GT3/roadamerica-start2.jpg",
         "thumbnail": "/img/thumbnails/Ferrari_GT3/roadamerica-start2_thumb.jpg",
+        "large": "/img/large/racingGallery/Ferrari_GT3/roadamerica-start2.webp",
         "mtime": 1791834921915
       },
       {
         "image": "/img/racingGallery/Ferrari_GT3/roadamerica-fight.jpg",
         "thumbnail": "/img/thumbnails/Ferrari_GT3/roadamerica-fight_thumb.jpg",
+        "large": "/img/large/racingGallery/Ferrari_GT3/roadamerica-fight.webp",
         "mtime": 1791834544261
       },
       {
         "image": "/img/racingGallery/Ferrari_GT3/roadamerica-start.jpg",
         "thumbnail": "/img/thumbnails/Ferrari_GT3/roadamerica-start_thumb.jpg",
+        "large": "/img/large/racingGallery/Ferrari_GT3/roadamerica-start.webp",
         "mtime": 1791833962834
       }
     ]
@@ -145,106 +169,127 @@
       {
         "image": "/img/racingGallery/Fun_Races/citroen-paris.jpg",
         "thumbnail": "/img/thumbnails/Fun_Races/citroen-paris_thumb.jpg",
+        "large": "/img/large/racingGallery/Fun_Races/citroen-paris.webp",
         "mtime": 1791616658258
       },
       {
         "image": "/img/racingGallery/Fun_Races/transit-jyllandsringen.jpg",
         "thumbnail": "/img/thumbnails/Fun_Races/transit-jyllandsringen_thumb.jpg",
+        "large": "/img/large/racingGallery/Fun_Races/transit-jyllandsringen.webp",
         "mtime": 1787601135780
       },
       {
         "image": "/img/racingGallery/Fun_Races/BTCC-Brno.jpg",
         "thumbnail": "/img/thumbnails/Fun_Races/BTCC-Brno_thumb.jpg",
+        "large": "/img/large/racingGallery/Fun_Races/BTCC-Brno.webp",
         "mtime": 1776109907961
       },
       {
         "image": "/img/racingGallery/Fun_Races/bannochbrae-macan.jpg",
         "thumbnail": "/img/thumbnails/Fun_Races/bannochbrae-macan_thumb.jpg",
+        "large": "/img/large/racingGallery/Fun_Races/bannochbrae-macan.webp",
         "mtime": 1774351247312
       },
       {
         "image": "/img/racingGallery/Fun_Races/bannochbrae-jump2.jpg",
         "thumbnail": "/img/thumbnails/Fun_Races/bannochbrae-jump2_thumb.jpg",
+        "large": "/img/large/racingGallery/Fun_Races/bannochbrae-jump2.webp",
         "mtime": 1774350944665
       },
       {
         "image": "/img/racingGallery/Fun_Races/gentrack3.jpg",
         "thumbnail": "/img/thumbnails/Fun_Races/gentrack3_thumb.jpg",
+        "large": "/img/large/racingGallery/Fun_Races/gentrack3.webp",
         "mtime": 1759948804606
       },
       {
         "image": "/img/racingGallery/Fun_Races/gentrack1.jpg",
         "thumbnail": "/img/thumbnails/Fun_Races/gentrack1_thumb.jpg",
+        "large": "/img/large/racingGallery/Fun_Races/gentrack1.webp",
         "mtime": 1759948756987
       },
       {
         "image": "/img/racingGallery/Fun_Races/abarth-highlands.jpg",
         "thumbnail": "/img/thumbnails/Fun_Races/abarth-highlands_thumb.jpg",
+        "large": "/img/large/racingGallery/Fun_Races/abarth-highlands.webp",
         "mtime": 1759242197691
       },
       {
         "image": "/img/racingGallery/Fun_Races/prototype.jpg",
         "thumbnail": "/img/thumbnails/Fun_Races/prototype_thumb.jpg",
+        "large": "/img/large/racingGallery/Fun_Races/prototype.webp",
         "mtime": 1759242185639
       },
       {
         "image": "/img/racingGallery/Fun_Races/TC_legends_Kyalami.jpg",
         "thumbnail": "/img/thumbnails/Fun_Races/TC_legends_Kyalami_thumb.jpg",
+        "large": "/img/large/racingGallery/Fun_Races/TC_legends_Kyalami.webp",
         "mtime": 1759242061306
       },
       {
         "image": "/img/racingGallery/Fun_Races/Road_America.jpg",
         "thumbnail": "/img/thumbnails/Fun_Races/Road_America_thumb.jpg",
+        "large": "/img/large/racingGallery/Fun_Races/Road_America.webp",
         "mtime": 1759242061262
       },
       {
         "image": "/img/racingGallery/Fun_Races/Porsche_917.jpg",
         "thumbnail": "/img/thumbnails/Fun_Races/Porsche_917_thumb.jpg",
+        "large": "/img/large/racingGallery/Fun_Races/Porsche_917.webp",
         "mtime": 1759242061257
       },
       {
         "image": "/img/racingGallery/Fun_Races/LongBeachGT4.jpg",
         "thumbnail": "/img/thumbnails/Fun_Races/LongBeachGT4_thumb.jpg",
+        "large": "/img/large/racingGallery/Fun_Races/LongBeachGT4.webp",
         "mtime": 1759242061234
       },
       {
         "image": "/img/racingGallery/Fun_Races/LongBeachGT4-3.jpg",
         "thumbnail": "/img/thumbnails/Fun_Races/LongBeachGT4-3_thumb.jpg",
+        "large": "/img/large/racingGallery/Fun_Races/LongBeachGT4-3.webp",
         "mtime": 1759242061212
       },
       {
         "image": "/img/racingGallery/Fun_Races/LongBeachGT4-2.jpg",
         "thumbnail": "/img/thumbnails/Fun_Races/LongBeachGT4-2_thumb.jpg",
+        "large": "/img/large/racingGallery/Fun_Races/LongBeachGT4-2.webp",
         "mtime": 1759242061197
       },
       {
         "image": "/img/racingGallery/Fun_Races/Hillclimb_Lambo.jpg",
         "thumbnail": "/img/thumbnails/Fun_Races/Hillclimb_Lambo_thumb.jpg",
+        "large": "/img/large/racingGallery/Fun_Races/Hillclimb_Lambo.webp",
         "mtime": 1759242061179
       },
       {
         "image": "/img/racingGallery/Fun_Races/F1_Estoril.jpg",
         "thumbnail": "/img/thumbnails/Fun_Races/F1_Estoril_thumb.jpg",
+        "large": "/img/large/racingGallery/Fun_Races/F1_Estoril.webp",
         "mtime": 1759242061146
       },
       {
         "image": "/img/racingGallery/Fun_Races/Euronascar_fight.jpg",
         "thumbnail": "/img/thumbnails/Fun_Races/Euronascar_fight_thumb.jpg",
+        "large": "/img/large/racingGallery/Fun_Races/Euronascar_fight.webp",
         "mtime": 1759242061125
       },
       {
         "image": "/img/racingGallery/Fun_Races/Euronascar.jpg",
         "thumbnail": "/img/thumbnails/Fun_Races/Euronascar_thumb.jpg",
+        "large": "/img/large/racingGallery/Fun_Races/Euronascar.webp",
         "mtime": 1759242061091
       },
       {
         "image": "/img/racingGallery/Fun_Races/Deutschlandring2.jpg",
         "thumbnail": "/img/thumbnails/Fun_Races/Deutschlandring2_thumb.jpg",
+        "large": "/img/large/racingGallery/Fun_Races/Deutschlandring2.webp",
         "mtime": 1759242061084
       },
       {
         "image": "/img/racingGallery/Fun_Races/Deutschlandring1.jpg",
         "thumbnail": "/img/thumbnails/Fun_Races/Deutschlandring1_thumb.jpg",
+        "large": "/img/large/racingGallery/Fun_Races/Deutschlandring1.webp",
         "mtime": 1759242061064
       }
     ]
@@ -255,26 +300,31 @@
       {
         "image": "/img/racingGallery/In_Memoriam/Memorial-Race-20-07-26.jpg",
         "thumbnail": "/img/thumbnails/In_Memoriam/Memorial-Race-20-07-26_thumb.jpg",
+        "large": "/img/large/racingGallery/In_Memoriam/Memorial-Race-20-07-26.webp",
         "mtime": 1785080056981
       },
       {
         "image": "/img/racingGallery/In_Memoriam/Phillipp_Markus_Divebomb.jpg",
         "thumbnail": "/img/thumbnails/In_Memoriam/Phillipp_Markus_Divebomb_thumb.jpg",
+        "large": "/img/large/racingGallery/In_Memoriam/Phillipp_Markus_Divebomb.webp",
         "mtime": 1759242061355
       },
       {
         "image": "/img/racingGallery/In_Memoriam/Minute_Of_Silence.jpg",
         "thumbnail": "/img/thumbnails/In_Memoriam/Minute_Of_Silence_thumb.jpg",
+        "large": "/img/large/racingGallery/In_Memoriam/Minute_Of_Silence.webp",
         "mtime": 1759242061315
       },
       {
         "image": "/img/racingGallery/In_Memoriam/Petermann-Discokugel.jpg",
         "thumbnail": "/img/thumbnails/In_Memoriam/Petermann-Discokugel_thumb.jpg",
+        "large": "/img/large/racingGallery/In_Memoriam/Petermann-Discokugel.webp",
         "mtime": 1689256349318
       },
       {
         "image": "/img/racingGallery/In_Memoriam/DivebombRacing.jpg",
         "thumbnail": "/img/thumbnails/In_Memoriam/DivebombRacing_thumb.jpg",
+        "large": "/img/large/racingGallery/In_Memoriam/DivebombRacing.webp",
         "mtime": 1668958692246
       }
     ]
@@ -285,11 +335,13 @@
       {
         "image": "/img/racingGallery/LaMei/GT4_Sebring_2.jpg",
         "thumbnail": "/img/thumbnails/LaMei/GT4_Sebring_2_thumb.jpg",
+        "large": "/img/large/racingGallery/LaMei/GT4_Sebring_2.webp",
         "mtime": 1759242061397
       },
       {
         "image": "/img/racingGallery/LaMei/GT4_Sebring.jpg",
         "thumbnail": "/img/thumbnails/LaMei/GT4_Sebring_thumb.jpg",
+        "large": "/img/large/racingGallery/LaMei/GT4_Sebring.webp",
         "mtime": 1759242061379
       }
     ]
@@ -300,36 +352,43 @@
       {
         "image": "/img/racingGallery/LadaCup/lada-bikernieki1.jpg",
         "thumbnail": "/img/thumbnails/LadaCup/lada-bikernieki1_thumb.jpg",
+        "large": "/img/large/racingGallery/LadaCup/lada-bikernieki1.webp",
         "mtime": 1774901123233
       },
       {
         "image": "/img/racingGallery/LadaCup/lada-bikernieki2.jpg",
         "thumbnail": "/img/thumbnails/LadaCup/lada-bikernieki2_thumb.jpg",
+        "large": "/img/large/racingGallery/LadaCup/lada-bikernieki2.webp",
         "mtime": 1774900507888
       },
       {
         "image": "/img/racingGallery/LadaCup/Lada-Ahvenisto.jpg",
         "thumbnail": "/img/thumbnails/LadaCup/Lada-Ahvenisto_thumb.jpg",
+        "large": "/img/large/racingGallery/LadaCup/Lada-Ahvenisto.webp",
         "mtime": 1772485923461
       },
       {
         "image": "/img/racingGallery/LadaCup/Lada-Grobnik.jpg",
         "thumbnail": "/img/thumbnails/LadaCup/Lada-Grobnik_thumb.jpg",
+        "large": "/img/large/racingGallery/LadaCup/Lada-Grobnik.webp",
         "mtime": 1770066740196
       },
       {
         "image": "/img/racingGallery/LadaCup/Tracklimits.jpg",
         "thumbnail": "/img/thumbnails/LadaCup/Tracklimits_thumb.jpg",
+        "large": "/img/large/racingGallery/LadaCup/Tracklimits.webp",
         "mtime": 1770066527296
       },
       {
         "image": "/img/racingGallery/LadaCup/PhotoFinish.jpg",
         "thumbnail": "/img/thumbnails/LadaCup/PhotoFinish_thumb.jpg",
+        "large": "/img/large/racingGallery/LadaCup/PhotoFinish.webp",
         "mtime": 1770066383779
       },
       {
         "image": "/img/racingGallery/LadaCup/Lada-Drift.jpg",
         "thumbnail": "/img/thumbnails/LadaCup/Lada-Drift_thumb.jpg",
+        "large": "/img/large/racingGallery/LadaCup/Lada-Drift.webp",
         "mtime": 1768857117492
       }
     ]
@@ -340,81 +399,97 @@
       {
         "image": "/img/racingGallery/Liveries/auditt-rostkübel.jpg",
         "thumbnail": "/img/thumbnails/Liveries/auditt-rostkübel_thumb.jpg",
+        "large": "/img/large/racingGallery/Liveries/auditt-rostkübel.webp",
         "mtime": 1759242162535
       },
       {
         "image": "/img/racingGallery/Liveries/vTCR_STL.jpg",
         "thumbnail": "/img/thumbnails/Liveries/vTCR_STL_thumb.jpg",
+        "large": "/img/large/racingGallery/Liveries/vTCR_STL.webp",
         "mtime": 1759242061500
       },
       {
         "image": "/img/racingGallery/Liveries/vTCR-MMS.jpg",
         "thumbnail": "/img/thumbnails/Liveries/vTCR-MMS_thumb.jpg",
+        "large": "/img/large/racingGallery/Liveries/vTCR-MMS.webp",
         "mtime": 1759242061488
       },
       {
         "image": "/img/racingGallery/Liveries/STL.jpg",
         "thumbnail": "/img/thumbnails/Liveries/STL_thumb.jpg",
+        "large": "/img/large/racingGallery/Liveries/STL.webp",
         "mtime": 1759242061485
       },
       {
         "image": "/img/racingGallery/Liveries/Porsche_Jongo_Racing.jpg",
         "thumbnail": "/img/thumbnails/Liveries/Porsche_Jongo_Racing_thumb.jpg",
+        "large": "/img/large/racingGallery/Liveries/Porsche_Jongo_Racing.webp",
         "mtime": 1759242061472
       },
       {
         "image": "/img/racingGallery/Liveries/MX5_STL.jpg",
         "thumbnail": "/img/thumbnails/Liveries/MX5_STL_thumb.jpg",
+        "large": "/img/large/racingGallery/Liveries/MX5_STL.webp",
         "mtime": 1759242061469
       },
       {
         "image": "/img/racingGallery/Liveries/MX5_Pepe.jpg",
         "thumbnail": "/img/thumbnails/Liveries/MX5_Pepe_thumb.jpg",
+        "large": "/img/large/racingGallery/Liveries/MX5_Pepe.webp",
         "mtime": 1759242061466
       },
       {
         "image": "/img/racingGallery/Liveries/LMP_Jongo_Racing.jpg",
         "thumbnail": "/img/thumbnails/Liveries/LMP_Jongo_Racing_thumb.jpg",
+        "large": "/img/large/racingGallery/Liveries/LMP_Jongo_Racing.webp",
         "mtime": 1759242061463
       },
       {
         "image": "/img/racingGallery/Liveries/GT3_Wobble_Racing.jpg",
         "thumbnail": "/img/thumbnails/Liveries/GT3_Wobble_Racing_thumb.jpg",
+        "large": "/img/large/racingGallery/Liveries/GT3_Wobble_Racing.webp",
         "mtime": 1759242061460
       },
       {
         "image": "/img/racingGallery/Liveries/GT3_Divebomb_Racing.jpg",
         "thumbnail": "/img/thumbnails/Liveries/GT3_Divebomb_Racing_thumb.jpg",
+        "large": "/img/large/racingGallery/Liveries/GT3_Divebomb_Racing.webp",
         "mtime": 1759242061458
       },
       {
         "image": "/img/racingGallery/Liveries/GT2_Liveries.jpg",
         "thumbnail": "/img/thumbnails/Liveries/GT2_Liveries_thumb.jpg",
+        "large": "/img/large/racingGallery/Liveries/GT2_Liveries.webp",
         "mtime": 1759242061443
       },
       {
         "image": "/img/racingGallery/Liveries/F3_Jongo_Racing.jpg",
         "thumbnail": "/img/thumbnails/Liveries/F3_Jongo_Racing_thumb.jpg",
+        "large": "/img/large/racingGallery/Liveries/F3_Jongo_Racing.webp",
         "mtime": 1759242061433
       },
       {
         "image": "/img/racingGallery/Liveries/F3_Divebomb_Racing.jpg",
         "thumbnail": "/img/thumbnails/Liveries/F3_Divebomb_Racing_thumb.jpg",
+        "large": "/img/large/racingGallery/Liveries/F3_Divebomb_Racing.webp",
         "mtime": 1759242061428
       },
       {
         "image": "/img/racingGallery/Liveries/AudiTT_Divebomb_Racing.jpg",
         "thumbnail": "/img/thumbnails/Liveries/AudiTT_Divebomb_Racing_thumb.jpg",
+        "large": "/img/large/racingGallery/Liveries/AudiTT_Divebomb_Racing.webp",
         "mtime": 1759242061426
       },
       {
         "image": "/img/racingGallery/Liveries/Superkart_5.jpg",
         "thumbnail": "/img/thumbnails/Liveries/Superkart_5_thumb.jpg",
+        "large": "/img/large/racingGallery/Liveries/Superkart_5.webp",
         "mtime": 1759242061283
       },
       {
         "image": "/img/racingGallery/Liveries/Porsche992.jpg",
         "thumbnail": "/img/thumbnails/Liveries/Porsche992_thumb.jpg",
+        "large": "/img/large/racingGallery/Liveries/Porsche992.webp",
         "mtime": 1688594215330
       }
     ]
@@ -425,21 +500,25 @@
       {
         "image": "/img/racingGallery/Porsche_Cup/Porsche_Cup_Mugello.jpg",
         "thumbnail": "/img/thumbnails/Porsche_Cup/Porsche_Cup_Mugello_thumb.jpg",
+        "large": "/img/large/racingGallery/Porsche_Cup/Porsche_Cup_Mugello.webp",
         "mtime": 1759242061586
       },
       {
         "image": "/img/racingGallery/Porsche_Cup/Porsche-Cup-Kyalami1.jpg",
         "thumbnail": "/img/thumbnails/Porsche_Cup/Porsche-Cup-Kyalami1_thumb.jpg",
+        "large": "/img/large/racingGallery/Porsche_Cup/Porsche-Cup-Kyalami1.webp",
         "mtime": 1759242061553
       },
       {
         "image": "/img/racingGallery/Porsche_Cup/Porsche-Cup-Kyalami.jpg",
         "thumbnail": "/img/thumbnails/Porsche_Cup/Porsche-Cup-Kyalami_thumb.jpg",
+        "large": "/img/large/racingGallery/Porsche_Cup/Porsche-Cup-Kyalami.webp",
         "mtime": 1759242061534
       },
       {
         "image": "/img/racingGallery/Porsche_Cup/Imola_Start.jpg",
         "thumbnail": "/img/thumbnails/Porsche_Cup/Imola_Start_thumb.jpg",
+        "large": "/img/large/racingGallery/Porsche_Cup/Imola_Start.webp",
         "mtime": 1759242061515
       }
     ]

@@ -4,11 +4,15 @@
 import fs from "fs";
 import path from "path";
 
+import sharp from "sharp";
+
 const rootDir = path.resolve();
 const publicDir = path.join(rootDir, "public");
 
 const imgFiles = path.join(publicDir, "img", "raceCalender");
 const outFile = path.join(publicDir, "data", "calenderGallery.json");
+// Web-optimized variants (WebP, max. 1920px) - some flyers are multi-MB PNGs
+const webDir = path.join(publicDir, "img", "large", "raceCalender");
 
 const existingGallery: GalleryEntry[] = fs.existsSync(outFile)
   ? JSON.parse(fs.readFileSync(outFile, "utf8"))
@@ -36,11 +40,23 @@ function getDescription(base: string): string {
 interface GalleryEntry {
   name: string;
   img: string;
+  web: string;
   description: string;
   mtime?: number;
 }
 
-function buildGallery(): void {
+async function buildGallery(): Promise<void> {
+  fs.mkdirSync(webDir, { recursive: true });
+  for (const img of getFiles()) {
+    const webPath = path.join(webDir, img.replace(/\.(jpg|png)$/i, ".webp"));
+    if (!fs.existsSync(webPath)) {
+      await sharp(path.join(imgFiles, img))
+        .resize({ width: 1920, withoutEnlargement: true })
+        .webp({ quality: 85 })
+        .toFile(webPath);
+    }
+  }
+
   const images = getFiles();
   const gallery: GalleryEntry[] = images
     .map((img) => {
@@ -57,6 +73,7 @@ function buildGallery(): void {
       return {
         name: base,
         img: `/img/raceCalender/${img}`,
+        web: `/img/large/raceCalender/${base}.webp`,
         description: getDescription(base),
         mtime,
       };
@@ -81,4 +98,7 @@ function buildGallery(): void {
   }
 }
 
-buildGallery();
+buildGallery().catch((e) => {
+  console.error(e);
+  process.exit(1);
+});

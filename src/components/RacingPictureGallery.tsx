@@ -5,6 +5,7 @@ import { Button } from "./ui/button";
 type GalleryImage = {
   image: string;
   thumbnail: string;
+  large?: string;
   album: string;
   mtime?: number;
 };
@@ -70,6 +71,14 @@ const RacingPictureGallery: React.FC = () => {
     return () => window.removeEventListener("keydown", handleKey);
   }, [selectedIdx, images.length]);
 
+  // Preload the neighbouring images so prev/next feels instant
+  useEffect(() => {
+    if (selectedIdx === null) return;
+    for (const neighbour of [images[selectedIdx - 1], images[selectedIdx + 1]]) {
+      if (neighbour) new Image().src = neighbour.large ?? neighbour.image;
+    }
+  }, [selectedIdx, images]);
+
   // Touch swipe navigation
   useEffect(() => {
     if (selectedIdx === null) return;
@@ -99,7 +108,8 @@ const RacingPictureGallery: React.FC = () => {
 
   const albumNames = ["All", ...albums.map((a) => a.album)];
   const selected = selectedIdx !== null ? images[selectedIdx] : null;
-  const imgLoading = selected !== null && loadedSrc !== selected.image;
+  const selectedSrc = selected ? (selected.large ?? selected.image) : null;
+  const imgLoading = selected !== null && loadedSrc !== selectedSrc;
 
   return (
     <div>
@@ -126,9 +136,10 @@ const RacingPictureGallery: React.FC = () => {
           >
             <img
               src={img.thumbnail}
-              alt="Thumbnail"
+              alt={img.image.split("/").pop()}
               className="aspect-square object-cover w-full h-full rounded shadow hover:scale-105 transition-transform duration-200"
               loading="lazy"
+              decoding="async"
             />
           </button>
         ))}
@@ -140,10 +151,8 @@ const RacingPictureGallery: React.FC = () => {
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/80"
           onClick={() => setSelectedIdx(null)}
         >
-          <div
-            className="relative w-full mx-4"
-            onClick={(e) => e.stopPropagation()}
-          >
+          {/* Clicks on the dark backdrop bubble up and close the lightbox; image, buttons and caption stop them */}
+          <div className="relative w-full mx-4">
             <button
               className="absolute top-2 right-2 text-white text-2xl bg-black/50 rounded-full p-2 hover:bg-black/80 cursor-pointer"
               onClick={() => setSelectedIdx(null)}
@@ -155,9 +164,10 @@ const RacingPictureGallery: React.FC = () => {
             {selectedIdx !== null && selectedIdx > 0 && (
               <button
                 className="absolute left-2 top-1/2 -translate-y-1/2 text-white text-3xl bg-black/40 rounded-full p-2 hover:bg-black/80 cursor-pointer"
-                onClick={() =>
-                  setSelectedIdx(selectedIdx !== null ? selectedIdx - 1 : 0)
-                }
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelectedIdx(selectedIdx - 1);
+                }}
                 aria-label="Vorheriges Bild"
               >
                 &#8592;
@@ -165,10 +175,11 @@ const RacingPictureGallery: React.FC = () => {
             )}
             {selectedIdx !== null && selectedIdx < images.length - 1 && (
               <button
-                className="absolute right-10 top-1/2 -translate-y-1/2 text-white text-3xl bg-black/40 rounded-full p-2 hover:bg-black/80 cursor-pointer"
-                onClick={() =>
-                  setSelectedIdx(selectedIdx !== null ? selectedIdx + 1 : 0)
-                }
+                className="absolute right-2 top-1/2 -translate-y-1/2 text-white text-3xl bg-black/40 rounded-full p-2 hover:bg-black/80 cursor-pointer"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelectedIdx(selectedIdx + 1);
+                }}
                 aria-label="Nächstes Bild"
               >
                 &#8594;
@@ -186,15 +197,30 @@ const RacingPictureGallery: React.FC = () => {
                 </div>
               )}
               <img
-                src={selected.image}
+                src={selected.large ?? selected.image}
                 alt="Großansicht"
-                className={`w-full h-auto max-h-[80vh] object-contain rounded shadow-lg select-none ${imgLoading ? "hidden" : ""}`}
+                className={`max-w-full h-auto max-h-[80vh] object-contain rounded shadow-lg select-none ${imgLoading ? "hidden" : ""}`}
                 draggable={false}
-                onLoad={() => setLoadedSrc(selected.image)}
+                onClick={(e) => e.stopPropagation()}
+                onLoad={() => setLoadedSrc(selectedSrc)}
               />
             </div>
-            <div className="text-white text-center mt-2 space-y-1">
-              <div>{selected.image.split("/").pop()}</div>
+            <div
+              className="text-white text-center mt-2 space-y-1"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div>
+                {selected.image.split("/").pop()}
+                {" · "}
+                <a
+                  href={selected.image}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline text-gray-300 hover:text-white"
+                >
+                  Original
+                </a>
+              </div>
               {selected.mtime ? (
                 <div className="text-sm text-gray-300">
                   {formatImageDate(selected.mtime)}

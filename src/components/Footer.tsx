@@ -1,9 +1,8 @@
 import { InlineExternalLink } from "./Link";
 import { ModeToggle } from "./ui/mode-toggle";
 
-// Replace with your Discord invite/banner image and link
-const DISCORD_INVITE_URL = "https://discord.gg/your-invite-link";
-const DISCORD_BANNER = "/logo192.png"; // Placeholder, replace with actual banner if available
+const DISCORD_INVITE_URL = "https://discord.gg/BaZxrzvmGu";
+const DISCORD_BANNER = "/logo192.png";
 
 export default function Footer() {
   return (

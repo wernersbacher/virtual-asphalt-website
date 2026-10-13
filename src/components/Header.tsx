@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Menu } from "lucide-react";
 import React from "react";
 
-import headerImg from "../img/header/header.png";
+import headerImg from "../img/header/header.webp";
 
 import { InlineExternalLink as ExternalLink } from "./Link";
 import { NavMenu } from "./NavMenu";
@@ -40,7 +40,10 @@ export default function Header() {
           {/* Header-Image */}
           <img
             src={headerImg}
-            alt="Header Image"
+            alt="virtualAsphalt"
+            width={1200}
+            height={150}
+            fetchPriority="high"
             className="w-full rounded-md object-cover object-center border-b"
           />
 

@@ -26,25 +26,23 @@
   AddOutputFilterByType DEFLATE text/javascript
   AddOutputFilterByType DEFLATE application/javascript
   AddOutputFilterByType DEFLATE application/json
+  AddOutputFilterByType DEFLATE application/manifest+json
+  AddOutputFilterByType DEFLATE image/svg+xml
 </IfModule>
 
 <IfModule mod_headers.c>
-  # Disable caching for JSON data files so the gallery always fetches fresh JSON
-  <FilesMatch "\.json$">
-    Header set Cache-Control "no-cache, no-store, must-revalidate"
-    Header set Pragma "no-cache"
-    Header set Expires "0"
+  # JSON data and the HTML shell: always revalidate (cheap 304 via ETag), so updates show up immediately
+  <FilesMatch "\.(json|html|htm)$">
+    Header set Cache-Control "no-cache"
   </FilesMatch>
 
-  # Prevent caching of index.html and other HTML files so SPA shell updates immediately
-  <FilesMatch "\.(html|htm)$">
-    Header set Cache-Control "no-cache, no-store, must-revalidate"
-    Header set Pragma "no-cache"
-    Header set Expires "0"
+  # Images in /img, /data etc. keep their file name when replaced, so they must not be "immutable"
+  <FilesMatch "\.(jpg|jpeg|png|gif|webp|avif|svg|ico)$">
+    Header set Cache-Control "public, max-age=2592000"
   </FilesMatch>
 
-  # Allow long-term caching for image files since we use cache-busting query param
-  <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico)$">
+  # Vite build output has content hashes in the file names -> cache forever
+  <If "%{REQUEST_URI} =~ m#^/assets/#">
     Header set Cache-Control "public, max-age=31536000, immutable"
-  </FilesMatch>
+  </If>
 </IfModule>

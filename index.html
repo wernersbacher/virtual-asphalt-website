@@ -9,9 +9,24 @@
       name="description"
       content="Simracing league virtualAsphalt. We race every Monday. Located in Germany"
     />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="virtualAsphalt.org" />
+    <meta
+      property="og:description"
+      content="Simracing league virtualAsphalt. We race every Monday. Located in Germany"
+    />
+    <meta property="og:image" content="/logo512.png" />
     <link rel="apple-touch-icon" href="/logo192.png" />
     <link rel="manifest" href="/manifest.json" />
     <title>virtualAsphalt.org</title>
+    <script>
+      // Apply the stored theme before the first paint to avoid a light/dark flash (see themeprovider.tsx)
+      try {
+        var t = localStorage.getItem("vite-ui-theme") || "system";
+        if (t === "system") t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.classList.add(t);
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <div id="app"></div>
